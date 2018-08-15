@@ -1,0 +1,47 @@
+textarea {
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+}
+
+.save {
+    display: block;
+    padding: 2px 5px;
+    background-color: grey;
+    color: white;
+    margin-top: -4px;
+    height: auto;
+    border-width: 0px;
+}
+
+#edit_skill_window {
+    border: 1px solid grey;
+}
+
+#edit_skill .save {
+    margin: 0;
+}
+
+#personal_path form {
+    width: 100%;
+}
+
+#personal_path textarea {
+    width: calc(100% - 10px);
+}
+
+#experience_fields {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid grey;
+    padding: 10px;
+}
+
+#experience_fields > * {
+    width: 48%;
+}
+
+#personal_path .save {
+    margin: 0;
+}

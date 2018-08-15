@@ -1,0 +1,360 @@
+body {
+    margin: 0;
+}
+
+section:not(:first-child) {
+    padding: 20px 0;
+}
+
+.content {
+    width: 1200px;
+    max-width: 100%;
+    margin: auto;
+    height: 100%;
+}
+
+h1, h2, h3, h4, nav li, #works li {
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3, h4 {
+    margin: 0.5em 0;
+}
+
+p, label, input {
+    font-family: 'Raleway', sans-serif;
+    margin: 0.5em 0;
+    font-size: 1em;
+}
+
+/* NAVIGATION */
+
+header {
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    background-color: white;
+}
+
+header img {
+    display: block;
+    height: 60px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    display: block;
+    padding: 5px 10px;
+    list-style-type: none;
+}
+
+nav ul li:last-child {
+    border: 2px solid black;
+    margin-left: 5px;
+}
+
+/* HERO */
+
+#hero_area {
+    height: 450px;
+    width: 100%;
+    background: url("/public/img/background.png") no-repeat right bottom;
+    background-size: cover;
+}
+
+#hero_text_area {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#hero_text {
+    margin-top: 80px;
+    max-width: 800px;
+}
+
+#hero_text_area h1 {
+    font-size: 2.5em;
+}
+
+#hero_text_area p {
+    font-size: 1.5em;
+}
+
+/* SEPARATOR */
+
+.separator {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 30px 0;
+}
+
+.separator * {
+    position: absolute;
+    background-color: lightgrey;
+    border-radius: 2px;
+}
+
+.thin_separator {
+    width: 160px;
+    height: 4px;
+}
+
+.thick_separator {
+    width: 90px;
+    height: 8px;
+}
+
+/* ABOUT */
+
+#perso_skills, #personal_path {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+#perso_skills > *, #personal_path > * {
+    width: 48%;
+}
+
+.skill_block {
+    display: flex;
+}
+
+.skill_bar {
+    display: flex;
+    width: calc(100% - 120px);
+}
+
+.skill_name {
+    border-bottom: 5px solid black;
+    width: 120px;
+}
+
+.skill_name p {
+    margin-bottom: 0.4em;
+}
+
+.skill_level {
+    border-bottom: 5px solid black;
+}
+
+.skill_rest {
+    border-bottom: 5px solid lightgrey;
+}
+
+.experience_block {
+    display: flex;
+    margin-top: 20px;
+}
+
+.experience_block .context {
+    width: 150px;
+    min-width: 150px;
+}
+
+/* EXPERTISE */
+
+#expertise {
+    background: url("/public/img/expertise_bg.png") no-repeat right bottom;
+    background-size: cover;
+    color: white;
+}
+
+#expertise_block {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.expertise_module {
+    width: 30%;
+    display: flex;
+}
+
+.expertise_picture {
+    margin-top: 0.8em;
+}
+
+.expertise_picture i {
+    font-size: 2.5em;
+    margin-right: 30px;
+}
+
+/* WORKS */
+
+#work_selector {
+    width: fit-content;
+    margin: auto;
+}
+
+#works ul {
+    display: flex;
+}
+
+#works ul li {
+    display: block;
+    padding: 5px 10px;
+    list-style-type: none;
+    border: 2px solid black;
+    margin-left: 5px;
+}
+
+#works ul li:first-child {
+    background-color: black;
+    color: white;
+}
+
+#works_block {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.works_sample {
+    width: 33%;
+}
+
+.works_sample iframe {
+    width: 100%;
+    border-width: 0px;
+}
+
+/* CONTACT */
+
+#contact {
+    display: flex;
+}
+
+#contact > * {
+    width: 50%;
+    padding: 40px 20px;
+}
+
+#language_list {
+    display: flex;
+    width: 100%;
+}
+
+#contact_form > * {
+    display: block;
+    width: calc(100% - 12px);
+    margin-bottom: 20px;
+}
+
+#basic_contact_data {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#basic_contact_data > * {
+    width: 45%;
+}
+
+#contact_form input {
+    height: 2em;
+    padding: 1px 5px;
+    font-size: 1em;
+    border: 1px solid grey;
+}
+
+#contact_form textarea {
+    padding: 5px;
+    font-size: 1em;
+    border: 1px solid grey;
+    width: calc(100% - 12px);
+}
+
+#contact_form input[type=submit] {
+    width: auto;
+    height: auto;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: 3px solid black;
+    font-weight: bold;
+}
+
+#contact_form input[type=submit]:hover {
+    color: white;
+    background-color: black;
+}
+
+/* MAP */
+
+#local_map {
+    width: 100%;
+    margin-bottom: -4px;
+}
+
+/* CREDITS */
+
+#credits {
+    background-color: dimgrey;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#credits img {
+    height: 80px;
+}
+
+#credits p {
+    color: white;
+}
+
+/* LOGIN */
+
+#loginlink {
+    background-color: white;
+    color: dimgray;
+    padding: 2px 5px;
+    font-family: 'Raleway', sans-serif;
+}
+
+#loginbox {
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+}
+
+#loginwindow {
+    background-color: whitesmoke;
+    padding: 20px 30px;
+}
+
+#loginwindow input[type=submit] {
+    color: dimgrey;
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    font-size: 1.2em;
+    border: 2px solid dimgrey;
+    font-weight: bold;
+}
+
+#loginwindow input[type=submit]:hover {
+    color: white;
+    background-color: dimgrey;
+}
