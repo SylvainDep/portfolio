@@ -1,6 +1,12 @@
 <?php require('menu.php'); ?>
 <?php require('separator.php'); ?>
 
+<?php
+while ($data = $works->fetch()) {
+    $work_array[] = $data;
+}
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,6 +17,20 @@
         <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+        <style>
+            <?php foreach ($work_array as $data) {
+                ?>
+                #work_sample_<?= $data['id'] ?> {
+                    background: url("../public/img/works/work_<?= $data['id'] ?>.png") no-repeat center bottom;
+                    background-size: cover;
+                    width: 30%;
+                    height: 200px;
+                    border: 3px solid grey;
+                }
+            <?php
+            }
+            ?>
+        </style>
     </head>
 
     <body>
@@ -41,7 +61,7 @@
                 <div id="intro">
                     <h3>Who <strong>am I</strong>?</h3>
                     <p><?= $introtext['description'] ?></p>
-                    <a>Download my CV (PDF)</a>
+                    <a id="download_resume">Download my CV (PDF)</a>
                 </div>
                 <div id="skills">
                     <h3>Expert <strong>in</strong></h3>
@@ -52,11 +72,11 @@
                             ?>
                                 <div class="skill_block">
                                     <div class="skill_name">
-                                        <p><?= $data['name'] ?></p>
+                                        <p><?= $data['skill_name'] ?></p>
                                     </div>
                                     <div class="skill_bar">
-                                        <div class="skill_level" style="width: <?= $data['level'] ?>%;"></div>
-                                        <div class="skill_rest" style="width: calc(100% - <?= $data['level'] ?>%);"></div>
+                                        <div class="skill_level" style="width: <?= $data['skill_level'] ?>%;"></div>
+                                        <div class="skill_rest" style="width: calc(100% - <?= $data['skill_level'] ?>%);"></div>
                                     </div>
                                 </div>
                             <?php
@@ -78,7 +98,7 @@
                                 <p><?= $data['location'] ?></p>
                             </div>
                             <div class="main">
-                                <h4><?= $data['name'] ?></h4>
+                                <h4><?= $data['title'] ?></h4>
                                 <p><?= $data['description'] ?></p>
                             </div>
                         </div>
@@ -98,7 +118,7 @@
                                 <p><?= $data['location'] ?></p>
                             </div>
                             <div class="main">
-                                <h4><?= $data['name'] ?></h4>
+                                <h4><?= $data['title'] ?></h4>
                                 <p><?= $data['description'] ?></p>
                             </div>
                         </div>
@@ -143,24 +163,37 @@
             <?= $separator ?>
             <div id="work_selector">
                 <ul>
-                    <li>All</li>
-                    <li>Websites</li>
-                    <li>SEO</li>
-                    <li>Content</li>
+                    <li id="selector_all" class="current">
+                        <a id="selector_all" class="current">All</a>
+                    </li>
+                    <li>
+                        <a id="selector_websites" class="hidden">Websites</a>
+                    </li>
+                    <li>
+                        <a id="selector_seo" class="hidden">SEO</a>
+                    </li>
+                    <li>
+                        <a id="selector_content" class="hidden">Content</a>
+                    </li>
                 </ul>
             </div>
             <div id="works_block">
-                <?php while ($data = $works->fetch())
-                {
+                <?php foreach ($work_array as $data) {
                     ?>
-                    <div class="works_sample">
-                        <a href="<?= $data['link'] ?>">
-                            <iframe src="<?= $data['iframe_link'] ?>"></iframe>
-                        </a>
-                    </div>
+
+                        <div id="work_sample_<?= $data['id'] ?>" class="<?= $data['category'] ?>_work" style="display: block;">
+                            <a href="<?= $data['link'] ?>" class="work_link">
+                                <div class="work_icon">
+                                    <div>
+                                        <i class="fas fa-eye"></i>
+                                        <p><?= $data['link'] ?></p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
                     <?php
                 }
-                $works->closeCursor();
                 ?>
             </div>
         </div>
@@ -180,8 +213,8 @@
                 {
                     ?>
                     <div class="language_sample">
-                        <p><?= $data['language'] ?></p>
-                        <p><?= $data['level'] ?></p>
+                        <p><?= $data['languages'] ?></p>
+                        <p><?= $data['language_level'] ?></p>
                     </div>
                     <?php
                 }
@@ -210,11 +243,11 @@
         <img src="../public/img/logo_jimdo.png"/>
         <img src="../public/img/logo_sncf.png"/>
         <p>Copyright © 2018 sylvaindepardieu.fr - All Rights Reserved.</p>
-        <a id="loginlink">Admin Login</a>
+        <a id="loginlink" class="popup_button">Admin Login</a>
     </section>
 
-    <div id="loginbox" style="display: none;">
-        <div id="loginwindow">
+    <div id="loginbox" class="popup_box" style="display: none;">
+        <div id="loginwindow" class="popup_window">
             <form method="post" action="index.php?action=homeadmin">
                 <label for="pseudo">Mail</label>
                 <input type="email" name="pseudo" />
@@ -229,6 +262,7 @@
     </div>
 
     <script type="text/javascript" src="../public/js/DOM.js"></script>
+    <script type="text/javascript" src="../public/js/GalleryFilter.js"></script>
     <script type="text/javascript" src="../public/js/togglelogin.js"></script>
     <script type="text/javascript" src="../public/js/Launcher.js"></script>
     </body>

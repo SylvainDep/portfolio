@@ -42,6 +42,112 @@ textarea {
     width: 48%;
 }
 
+.experience_block input[name=period] {
+    width: calc(100% - 10px);
+}
+
 #personal_path .save {
     margin: 0;
+}
+
+.expertise_picture {
+    display: flex;
+    align-items: center;
+}
+
+.work_form {
+    width: 32%;
+}
+
+/* FORM STYLE */
+
+#edit_introtext textarea {
+    background-color: #F8ECC2;
+    border: 2px solid #ECC75F;
+}
+
+#edit_introtext input[type=submit] {
+    background-color: #ECC75F;
+}
+
+#edit_skill {
+    margin-bottom: 10px;
+}
+
+#edit_skill input[type=submit] {
+    background-color: #ECC75F;
+}
+
+#edit_skill_window {
+    background-color: #F8ECC2;
+    border: 2px solid #ECC75F;
+}
+
+.skill_block {
+    padding: 0 10px;
+}
+
+.experience_block {
+    background-color: #F8ECC2;
+    border: 2px solid #ECC75F;
+    padding: 0 10px;
+}
+
+#edit_education input[type=submit], #edit_experience input[type=submit] {
+    background-color: #ECC75F;
+}
+
+.expertise_window {
+    background-color: #F8ECC2;
+    border: 2px solid #ECC75F;
+    padding: 10px;
+}
+
+.expertise_window textarea {
+    width: calc(100% - 6px);
+}
+
+#edit_expertise input[type=submit] {
+    background-color: #ECC75F;
+    margin-top: -1px;
+}
+
+.work_form {
+    padding: 5px;
+    background-color: #F8ECC2;
+    border: 2px solid #ECC75F;
+}
+
+.work_form input[type=submit] {
+    background-color: #ECC75F;
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+
+#addworkbutton {
+    background-color: #ECC75F;
+    color: white;
+    padding: 15px 20px;
+    display: inline-block;
+}
+
+#contact_list {
+     padding: 5px;
+     background-color: #F8ECC2;
+     border: 2px solid #ECC75F;
+}
+
+#edit_contact input[type=submit] {
+    margin-top: 0px;
+    background-color: #ECC75F;
+}
+
+.language_sample {
+    padding: 5px;
+    background-color: #F8ECC2;
+    border: 2px solid #ECC75F;
+}
+
+#language_list {
+    justify-content: space-between;
 }

@@ -3,6 +3,8 @@
 namespace App\config;
 
 use Exception;
+use Portfolio\Controller\AdminBoard;
+use Portfolio\Controller\Home;
 
 class Router
 {
@@ -13,16 +15,42 @@ class Router
 
         try {
             if (isset($_GET['action'])) {
-                if ($_GET['action'] == 'home') {
-                    new \Portfolio\Controller\Home();
-                } elseif ($_GET['action'] == 'homeadmin') {
-
-                    new \Portfolio\Controller\AdminBoard();
-                } else {
-                    new \Portfolio\Controller\Home();
+                switch ($_GET['action']) {
+                    case 'home':
+                        new Home();
+                        break;
+                    case 'homeadmin':
+                        new AdminBoard();
+                        break;
+                    case 'editintrotext':
+                        AdminBoard::editIntrotext($_POST['description']);
+                        break;
+                    case 'editskill':
+                        AdminBoard::editSkill($_GET['id'], $_POST['name'], $_POST['level']);
+                        break;
+                    case 'editexperience':
+                        AdminBoard::editExperience($_GET['id'], $_POST['period'], $_POST['location'], $_POST['name'], $_POST['description']);
+                        break;
+                    case 'editexpertise':
+                        AdminBoard::editExpertise($_GET['id'], $_POST['picture'], $_POST['title'], $_POST['description']);
+                        break;
+                    case 'editworks':
+                        AdminBoard::editWorks($_GET['id'], $_FILES['picture'], $_POST['link'], $_POST['category']);
+                        break;
+                    case 'addworks':
+                        AdminBoard::addWorks($_FILES['picture'], $_POST['link'], $_POST['category']);
+                        break;
+                    case 'editcontact':
+                        AdminBoard::editContact($_POST['address'], $_POST['mail'], $_POST['phone']);
+                        break;
+                    case 'editlanguage':
+                        AdminBoard::editLanguage($_GET['id'], $_POST['language'], $_POST['level']);
+                        break;
+                    default:
+                        new Home();
                 }
             } else {
-                new \Portfolio\Controller\Home();
+                new Home();
             }
         }
         catch(Exception $e) {

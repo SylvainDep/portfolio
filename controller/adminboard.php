@@ -8,6 +8,9 @@
 
 namespace Portfolio\Controller;
 
+use Portfolio\Model\Updater;
+
+include_once 'model/updater.php';
 
 class AdminBoard
 {
@@ -24,5 +27,91 @@ class AdminBoard
         $languages = $moduledisplay->getLanguages();
 
         require_once 'view/admin.php';
+    }
+
+    static function editIntrotext($description)
+    {
+        $updater = new Updater();
+
+        $updater->setIntrotext($description);
+
+        header('Location: index.php?action=homeadmin');
+    }
+
+    static function editSkill($id, $name, $level)
+    {
+        $updater = new Updater();
+
+        $updater->setSkill($id, $name, $level);
+
+        header('Location: index.php?action=homeadmin');
+    }
+
+    static function editExperience($id, $period, $location, $name, $description)
+    {
+        $updater = new Updater();
+
+        $updater->setExperience($id, $period, $location, $name, $description);
+
+        header('Location: index.php?action=homeadmin');
+    }
+
+    static function editExpertise($id, $picture, $title, $description)
+    {
+        $updater = new Updater();
+
+        $updater->setExpertise($id, $picture, $title, $description);
+
+        header('Location: index.php?action=homeadmin');
+    }
+
+    static function editContact($address, $mail, $phone)
+    {
+        $updater = new Updater();
+
+        $updater->setContact($address, $mail, $phone);
+
+        header('Location: index.php?action=homeadmin');
+    }
+
+    static function editLanguage($id, $language, $level)
+    {
+        $updater = new Updater();
+
+        $updater->setLanguage($id, $language, $level);
+
+        header('Location: index.php?action=homeadmin');
+    }
+
+    static function editWorks($id, $picture, $link, $category)
+    {
+        $updater = new Updater();
+
+        $updater->setWorks($id, $link, $category);
+
+        if(file_exists('/public/img/works/work_' . $id . '.png')) {
+            chmod('/public/img/works/work_' . $id . '.png',0755); //Change the file permissions if allowed
+            unlink('/public/img/works/work_' . $id . '.png'); //remove the file
+        }
+
+        move_uploaded_file($picture['tmp_name'], '/public/img/works/work_' . $id . '.png');
+
+        header('Location: index.php?action=homeadmin');
+    }
+
+    static function addWorks($picture, $link, $category)
+    {
+        $updater = new Updater();
+
+        $updater->insertWorks($link, $category);
+
+        if(file_exists('/public/img/works/work_' . $id . '.png')) {
+            chmod('/public/img/works/work_' . $id . '.png',0755); //Change the file permissions if allowed
+            unlink('/public/img/works/work_' . $id . '.png'); //remove the file
+        }
+
+        move_uploaded_file($picture['tmp_name'], __DIR__ . '/public/img/works/work_' . $id . '.png');
+
+        header('Location: index.php?action=homeadmin');
     }
 }

@@ -26,7 +26,7 @@ h3, h4 {
     margin: 0.5em 0;
 }
 
-p, label, input {
+p, label, input, a {
     font-family: 'Raleway', sans-serif;
     margin: 0.5em 0;
     font-size: 1em;
@@ -39,6 +39,7 @@ header {
     height: 80px;
     width: 100%;
     background-color: white;
+    box-shadow: 0px -40px 100px 10px #656565;
 }
 
 header img {
@@ -124,6 +125,18 @@ nav ul li:last-child {
 
 /* ABOUT */
 
+#download_resume {
+    padding: 10px 15px;
+    display: inline-block;
+    margin-top: 10px;
+    border: 2px solid black;
+}
+
+#download_resume:hover {
+    color: white;
+    background-color: black;
+}
+
 #perso_skills, #personal_path {
     display: flex;
     justify-content: space-between;
@@ -207,6 +220,7 @@ nav ul li:last-child {
 
 #works ul {
     display: flex;
+    padding-left: 0;
 }
 
 #works ul li {
@@ -217,7 +231,7 @@ nav ul li:last-child {
     margin-left: 5px;
 }
 
-#works ul li:first-child {
+.current {
     background-color: black;
     color: white;
 }
@@ -228,13 +242,38 @@ nav ul li:last-child {
     flex-wrap: wrap;
 }
 
-.works_sample {
-    width: 33%;
+#works_block > * {
+    margin-bottom: 20px;
 }
 
-.works_sample iframe {
+.work_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     width: 100%;
-    border-width: 0px;
+    margin: 0;
+    text-decoration: none;
+}
+
+.work_icon {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    transition-duration: 0.2s;
+}
+
+.work_icon:hover {
+    opacity: 1;
+}
+
+.work_icon > * {
+    text-align: center;
 }
 
 /* CONTACT */
@@ -322,14 +361,14 @@ nav ul li:last-child {
 
 /* LOGIN */
 
-#loginlink {
+.popup_button {
     background-color: white;
     color: dimgray;
     padding: 2px 5px;
     font-family: 'Raleway', sans-serif;
 }
 
-#loginbox {
+.popup_box {
     position: fixed;
     justify-content: center;
     align-items: center;
@@ -337,9 +376,10 @@ nav ul li:last-child {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     top: 0;
+    z-index: 999;
 }
 
-#loginwindow {
+.popup_window {
     background-color: whitesmoke;
     padding: 20px 30px;
 }
