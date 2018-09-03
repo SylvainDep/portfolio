@@ -1,0 +1,92 @@
+@media screen and (max-width: 768px) {
+    body {
+        background-color: red;
+    }
+
+    header {
+        height: auto;
+    }
+
+    nav {
+        display: block;
+    }
+
+    nav ul {
+        padding: 0px;
+        flex-wrap: wrap;
+
+    }
+
+    #hero_area {
+        height: initial;
+        width: calc(100% - 10px);
+    }
+
+    #perso_skills {
+        display: block;
+    }
+
+    #perso_skills > * {
+        width: 100%;
+    }
+
+    #personal_path {
+        display: block;
+    }
+
+    #personal_path > * {
+        width: 100%;
+    }
+
+    #expertise_block {
+        display: block;
+    }
+
+    .experience_block .context {
+        width: 30%;
+    }
+
+    .experience_block .main {
+        width: 70%
+    }
+
+    #works_block {
+        display: block;
+    }
+
+    #works_block > * {
+        width: calc(100% - 6px)!important;
+    }
+
+    #work_selector ul {
+        flex-wrap: wrap;
+    }
+
+    #contact {
+        display: block;
+    }
+
+    #contact > * {
+        width: 100%;
+        padding: 0;
+    }
+
+    #language_list {
+        display: block;
+    }
+
+    .language_sample {
+        border-right-width: 0px;
+        padding: 0px;
+    }
+
+    .language_sample p:first-child {
+        font-weight: bold;
+        display: inline-block;
+        width: 40%;
+    }
+
+    .language_sample p:last-child {
+        display: inline-block;
+    }
+}

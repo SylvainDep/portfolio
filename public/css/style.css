@@ -3,7 +3,7 @@ body {
 }
 
 section:not(:first-child) {
-    padding: 20px 0;
+    padding: 20px 5px;
 }
 
 .content {
@@ -32,6 +32,8 @@ p, label, input, a {
     font-size: 1em;
 }
 
+
+
 /* NAVIGATION */
 
 header {
@@ -40,6 +42,7 @@ header {
     width: 100%;
     background-color: white;
     box-shadow: 0px -40px 100px 10px #656565;
+    z-index: 2000;
 }
 
 header img {
@@ -69,6 +72,12 @@ nav ul li:last-child {
     margin-left: 5px;
 }
 
+nav a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Lato', sans-serif;
+}
+
 /* HERO */
 
 #hero_area {
@@ -76,6 +85,7 @@ nav ul li:last-child {
     width: 100%;
     background: url("/public/img/background.png") no-repeat right bottom;
     background-size: cover;
+    padding: 0 5px;
 }
 
 #hero_text_area {
@@ -130,6 +140,8 @@ nav ul li:last-child {
     display: inline-block;
     margin-top: 10px;
     border: 2px solid black;
+    text-decoration: none;
+    color: black;
 }
 
 #download_resume:hover {
@@ -229,6 +241,7 @@ nav ul li:last-child {
     list-style-type: none;
     border: 2px solid black;
     margin-left: 5px;
+    cursor: pointer;
 }
 
 .current {
@@ -280,6 +293,23 @@ nav ul li:last-child {
 
 #contact {
     display: flex;
+    line-height: 2em;
+}
+
+#contact_list {
+    margin-bottom: 30px;
+}
+
+#contact_list p {
+    margin-bottom: 15px;
+}
+
+#contact_list i {
+    color: dimgrey;
+    margin-right: 5px;
+    font-size: 2em;
+    width: 50px;
+    vertical-align: middle;
 }
 
 #contact > * {
@@ -290,6 +320,16 @@ nav ul li:last-child {
 #language_list {
     display: flex;
     width: 100%;
+}
+
+.language_sample {
+    padding: 0 20px;
+    border-right: 2px solid dimgrey;
+}
+
+.language_sample:last-child {
+    padding-right: 0 ;
+    border-right-width: 0px;
 }
 
 #contact_form > * {
@@ -360,6 +400,10 @@ nav ul li:last-child {
 }
 
 /* LOGIN */
+
+#loginlink {
+    cursor: pointer;
+}
 
 .popup_button {
     background-color: white;

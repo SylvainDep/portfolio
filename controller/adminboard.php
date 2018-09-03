@@ -89,12 +89,13 @@ class AdminBoard
 
         $updater->setWorks($id, $link, $category);
 
-        if(file_exists('/public/img/works/work_' . $id . '.png')) {
-            chmod('/public/img/works/work_' . $id . '.png',0755); //Change the file permissions if allowed
-            unlink('/public/img/works/work_' . $id . '.png'); //remove the file
-        }
+        unlink('public/img/works/work_' . $id . '.png'); //remove the file
 
-        move_uploaded_file($picture['tmp_name'], '/public/img/works/work_' . $id . '.png');
+        if (move_uploaded_file($picture['tmp_name'], 'public/img/works/work_' . $id . '.png')) {
+            echo 'all good';
+        } else {
+            echo 'meeeeh';
+        }
 
         header('Location: index.php?action=homeadmin');
     }
@@ -105,12 +106,20 @@ class AdminBoard
 
         $updater->insertWorks($link, $category);
 
-        if(file_exists('/public/img/works/work_' . $id . '.png')) {
-            chmod('/public/img/works/work_' . $id . '.png',0755); //Change the file permissions if allowed
-            unlink('/public/img/works/work_' . $id . '.png'); //remove the file
-        }
+        $lastinsert = $updater->getLastWorkId();
+        echo $lastinsert;
+        echo $picture['tmp_name'];
+    }
 
-        move_uploaded_file($picture['tmp_name'], __DIR__ . '/public/img/works/work_' . $id . '.png');
+    static function editResume($resume)
+    {
+        unlink('public/pdf/resume_sylvain_depardieu.pdf'); //remove the file
+
+        if (move_uploaded_file($resume['tmp_name'], 'public/pdf/resume_sylvain_depardieu.pdf')) {
+            echo 'all good';
+        } else {
+            echo 'meeeeh';
+        }
 
         header('Location: index.php?action=homeadmin');
     }

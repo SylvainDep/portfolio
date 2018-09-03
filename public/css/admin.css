@@ -18,7 +18,7 @@ textarea {
     border: 1px solid grey;
 }
 
-#edit_skill .save {
+.edit_skill .save {
     margin: 0;
 }
 
@@ -70,11 +70,21 @@ textarea {
     background-color: #ECC75F;
 }
 
-#edit_skill {
+#edit_resume {
+    padding: 5px;
+    background-color: #F8ECC2;
+    border: 2px solid #ECC75F;
+}
+
+#edit_resume input[type=submit] {
+    background-color: #ECC75F;
+}
+
+.edit_skill {
     margin-bottom: 10px;
 }
 
-#edit_skill input[type=submit] {
+.edit_skill input[type=submit] {
     background-color: #ECC75F;
 }
 
@@ -93,7 +103,7 @@ textarea {
     padding: 0 10px;
 }
 
-#edit_education input[type=submit], #edit_experience input[type=submit] {
+.edit_education input[type=submit], .edit_experience input[type=submit] {
     background-color: #ECC75F;
 }
 
@@ -107,7 +117,7 @@ textarea {
     width: calc(100% - 6px);
 }
 
-#edit_expertise input[type=submit] {
+.edit_expertise input[type=submit] {
     background-color: #ECC75F;
     margin-top: -1px;
 }
@@ -132,12 +142,18 @@ textarea {
 }
 
 #contact_list {
-     padding: 5px;
-     background-color: #F8ECC2;
-     border: 2px solid #ECC75F;
+    margin-bottom: 0;
+    padding: 5px;
+    background-color: #F8ECC2;
+    border: 2px solid #ECC75F;
 }
 
 #edit_contact input[type=submit] {
+    margin-top: 0px;
+    background-color: #ECC75F;
+}
+
+.edit_language input[type=submit] {
     margin-top: 0px;
     background-color: #ECC75F;
 }

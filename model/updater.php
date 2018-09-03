@@ -115,4 +115,12 @@ class Updater extends Manager
 
         return $addeddata;
     }
+
+    public function getLastWorkId()
+    {
+        $db = $this->dbConnect();
+        $req = $db->lastInsertId();
+
+        return $req;
+    }
 }

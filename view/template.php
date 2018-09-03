@@ -33,7 +33,7 @@ while ($data = $works->fetch()) {
         </style>
     </head>
 
-    <body>
+    <body id="body">
     <section id="header">
         <header>
             <div class="content">
@@ -61,7 +61,7 @@ while ($data = $works->fetch()) {
                 <div id="intro">
                     <h3>Who <strong>am I</strong>?</h3>
                     <p><?= $introtext['description'] ?></p>
-                    <a id="download_resume">Download my CV (PDF)</a>
+                    <a id="download_resume" href="../public/pdf/resume_sylvain_depardieu.pdf">Download my CV (PDF)</a>
                 </div>
                 <div id="skills">
                     <h3>Expert <strong>in</strong></h3>
@@ -163,18 +163,10 @@ while ($data = $works->fetch()) {
             <?= $separator ?>
             <div id="work_selector">
                 <ul>
-                    <li id="selector_all" class="current">
-                        <a id="selector_all" class="current">All</a>
-                    </li>
-                    <li>
-                        <a id="selector_websites" class="hidden">Websites</a>
-                    </li>
-                    <li>
-                        <a id="selector_seo" class="hidden">SEO</a>
-                    </li>
-                    <li>
-                        <a id="selector_content" class="hidden">Content</a>
-                    </li>
+                    <li id="selector_all" class="current">All</li>
+                    <li id="selector_websites" class="hidden">Websites</li>
+                    <li id="selector_seo" class="hidden">SEO</li>
+                    <li id="selector_content" class="hidden">Content</li>
                 </ul>
             </div>
             <div id="works_block">
@@ -204,9 +196,9 @@ while ($data = $works->fetch()) {
             <h2>Contact Address</h2>
             <?= $separator ?>
             <div id="contact_list">
-                <p><?= $contact['address'] ?></p>
-                <p><?= $contact['mail'] ?></p>
-                <p><?= $contact['phone'] ?></p>
+                <p><i class="fas fa-map-marker-alt"></i><?= $contact['address'] ?></p>
+                <p><i class="fas fa-envelope"></i><?= $contact['mail'] ?></p>
+                <p><i class="fas fa-phone"></i><?= $contact['phone'] ?></p>
             </div>
             <div id="language_list">
                 <?php while ($data = $languages->fetch())

@@ -1,0 +1,2 @@
+ToggleAddWork.init();
+ToggleLogin.init();

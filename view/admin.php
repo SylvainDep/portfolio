@@ -34,7 +34,7 @@ while ($data = $works->fetch()) {
     </style>
 </head>
 
-<body>
+<body id="body">
 <section id="header">
     <header>
         <div class="content">
@@ -68,6 +68,7 @@ while ($data = $works->fetch()) {
                 <a id="download_resume">Download my CV (PDF)</a>
                 <form id="edit_resume" enctype="multipart/form-data" method="post" action="index.php?action=editresume">
                     <input type="file" name="resume" />
+                    <input class="save" type="submit" value="Save">
                 </form>
             </div>
             <div id="skills">
@@ -77,7 +78,7 @@ while ($data = $works->fetch()) {
                     <?php while ($data = $skill->fetch())
                     {
                     ?>
-                    <form id="edit_skill" method="post" action="index.php?action=editskill&id=<?= $data['id'] ?>">
+                    <form class="edit_skill" method="post" action="index.php?action=editskill&id=<?= $data['id'] ?>">
                         <div id="edit_skill_window">
                                 <div class="skill_block">
                                     <p>Skill <?= $data['id'] ?>:<input class="edit_skillname" name="name" value="<?= $data['skill_name'] ?>"/> Level :<input class="edit_level" name="level" value="<?= $data['skill_level'] ?>"/>/100</p>
@@ -100,7 +101,7 @@ while ($data = $works->fetch()) {
                 <?php while ($data = $education->fetch())
                 {
                     ?>
-                    <form id="edit_education" method="post" action="index.php?action=editexperience&id=<?= $data['id'] ?>">
+                    <form class="edit_education" method="post" action="index.php?action=editexperience&id=<?= $data['id'] ?>">
                         <div class="experience_block">
                             <div class="context">
                                 <input name="period" value="<?= $data['period'] ?>"/>
@@ -124,7 +125,7 @@ while ($data = $works->fetch()) {
                 <?php while ($data = $experience->fetch())
                 {
                     ?>
-                    <form id="edit_experience" method="post" action="index.php?action=editexperience&id=<?= $data['id'] ?>">
+                    <form class="edit_experience" method="post" action="index.php?action=editexperience&id=<?= $data['id'] ?>">
                         <div class="experience_block">
                             <div class="context">
                                 <input name="period" value="<?= $data['period'] ?>"/>
@@ -155,7 +156,7 @@ while ($data = $works->fetch()) {
             {
                 ?>
                 <div class="expertise_module">
-                <form id="edit_expertise" method="post" action="index.php?action=editexpertise&id=<?= $data['id'] ?>">
+                <form class="edit_expertise" method="post" action="index.php?action=editexpertise&id=<?= $data['id'] ?>">
                     <div class="expertise_window">
                         <div class="expertise_picture">
                             <?= $data['picture'] ?>
@@ -181,14 +182,6 @@ while ($data = $works->fetch()) {
     <div class="content">
         <h2>Previous works</h2>
         <?= $separator ?>
-        <div id="work_selector">
-            <ul>
-                <li>All</li>
-                <li>Websites</li>
-                <li>SEO</li>
-                <li>Content</li>
-            </ul>
-        </div>
         <div id="works_block">
             <?php foreach ($work_array as $data) {
                 ?>
@@ -196,7 +189,7 @@ while ($data = $works->fetch()) {
                     <div id="work_sample_<?= $data['id'] ?>">
                         <a href="<?= $data['link'] ?>" class="work_link"></a>
                     </div>
-                    <form id="edit_work" enctype="multipart/form-data" method="post" action="index.php?action=editworks&id=<?= $data['id'] ?>">
+                    <form class="edit_work" enctype="multipart/form-data" method="post" action="index.php?action=editworks&id=<?= $data['id'] ?>">
                         <input type="file" name="picture" /><br/>
                         <input name="link" value="<?= htmlspecialchars($data['link']) ?>"/><br/>
                         <select name="category">
@@ -220,7 +213,7 @@ while ($data = $works->fetch()) {
     <div id="addworkwindow" class="popup_window">
         <form id="add_work" enctype="multipart/form-data" method="post" action="index.php?action=addwork">
             <input type="file" name="picture" /><br/>
-            <input name="link" value=""/><br/>
+            <input name="link"/><br/>
             <select name="category">
                 <option value="website">Website</option>
                 <option value="seo">SEO</option>
@@ -247,7 +240,7 @@ while ($data = $works->fetch()) {
             <?php while ($data = $languages->fetch())
             {
                 ?>
-            <form id="edit_contact" method="post" action="index.php?action=editlanguage&id=<?= $data['id'] ?>">
+            <form class="edit_language" method="post" action="index.php?action=editlanguage&id=<?= $data['id'] ?>">
                 <div class="language_sample">
                     <input name="language" value="<?= $data['languages'] ?>"/><br/>
                     <input name="level" value="<?= $data['language_level'] ?>"/><br/>
@@ -301,6 +294,7 @@ while ($data = $works->fetch()) {
 
 <script type="text/javascript" src="../public/js/DOM.js"></script>
 <script type="text/javascript" src="../public/js/togglelogin.js"></script>
-<script type="text/javascript" src="../public/js/Launcher.js"></script>
+<script type="text/javascript" src="../public/js/toggleaddwork.js"></script>
+<script type="text/javascript" src="../public/js/LauncherAdmin.js"></script>
 </body>
 </html>

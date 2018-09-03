@@ -46,6 +46,9 @@ class Router
                     case 'editlanguage':
                         AdminBoard::editLanguage($_GET['id'], $_POST['language'], $_POST['level']);
                         break;
+                    case 'edit_resume':
+                        AdminBoard::editResume($_FILES['resume']);
+                        break;
                     default:
                         new Home();
                 }

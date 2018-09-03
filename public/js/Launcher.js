@@ -1,2 +1,2 @@
-ToggleLogin.init();
 GalleryFilter.init();
+ToggleLogin.init();
