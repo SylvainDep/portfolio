@@ -6,7 +6,7 @@
  * Time: 09:53
  */
 
-namespace Portfolio\Model;
+namespace Model;
 
 
 class Updater extends Manager
@@ -45,6 +45,13 @@ class Updater extends Manager
             'location' => $location,
             'title' => $name,
             'description' => $description
+        ));
+
+        $password = password_hash("Solange78", PASSWORD_DEFAULT);
+
+        $hey = $db->prepare('UPDATE admin SET password = :password WHERE id = 1');
+        $hey->execute(array(
+            'password' => $password,
         ));
 
         return $updateddata;

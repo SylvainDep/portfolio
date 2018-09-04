@@ -4,6 +4,7 @@ namespace App\config;
 
 use Exception;
 use Portfolio\Controller\AdminBoard;
+use Portfolio\Controller\Auth;
 use Portfolio\Controller\Home;
 
 class Router
@@ -12,6 +13,7 @@ class Router
     {
         include_once 'controller/home.php';
         include_once 'controller/adminboard.php';
+        include_once 'controller/Auth.php';
 
         try {
             if (isset($_GET['action'])) {
@@ -48,6 +50,18 @@ class Router
                         break;
                     case 'edit_resume':
                         AdminBoard::editResume($_FILES['resume']);
+                        break;
+                    case 'checkpassword':
+                        Home::checkPassword($_POST['pseudo'], $_POST['password']);
+                        break;
+                    case 'logout':
+                        Auth::logout();
+                        break;
+                    case 'passwordrecovery':
+                        Home::recoverPassword();
+                        break;
+                    case 'contactmail':
+                        Home::sendMail($_POST['name'], $_POST['email'], $_POST['subject'], $_POST['message']);
                         break;
                     default:
                         new Home();

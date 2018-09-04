@@ -6,7 +6,7 @@
  * Time: 15:50
  */
 
-namespace Portfolio\Model;
+namespace Model;
 
 require_once("manager.php");
 

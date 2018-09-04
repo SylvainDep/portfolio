@@ -6,9 +6,10 @@
  * Time: 10:51
  */
 
-namespace Portfolio\Controller;
+namespace Controller;
 
 use Portfolio\Model\Updater;
+use Exception;
 
 include_once 'model/updater.php';
 
@@ -115,10 +116,20 @@ class AdminBoard
     {
         unlink('public/pdf/resume_sylvain_depardieu.pdf'); //remove the file
 
-        if (move_uploaded_file($resume['tmp_name'], 'public/pdf/resume_sylvain_depardieu.pdf')) {
-            echo 'all good';
+        $target_file = $target_dir . basename($resume["name"]);
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+        // Limit size to 5Mb
+        if ($resume["size"] > 5000000) {
+            throw new Exception('Impossible d\'ajouter l\'article !');
+        } elseif ($imageFileType != "jpg") {
+            throw new Exception('Impossible d\'ajouter l\'article !');
         } else {
-            echo 'meeeeh';
+            if (move_uploaded_file($resume['tmp_name'], 'public/pdf/resume_sylvain_depardieu.pdf')) {
+                header('Location: index.php?action=homeadmin');
+            } else {
+                throw new Exception('Impossible d\'ajouter l\'article !');
+            }
         }
 
         header('Location: index.php?action=homeadmin');

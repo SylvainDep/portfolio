@@ -217,13 +217,13 @@ while ($data = $works->fetch()) {
         <div id="contact_form_block">
             <h2>Get in touch !</h2>
             <?= $separator ?>
-            <form id="contact_form" method="get" action="index.php">
+            <form id="contact_form" method="post" action="index.php?action=contactmail">
                 <div id="basic_contact_data">
-                    <input type="text" placeholder="Name"/>
-                    <input type="email" placeholder="Your email"/>
+                    <input name="name" type="text" placeholder="Name"/>
+                    <input name="email" type="email" placeholder="Your email"/>
                 </div>
-                <input type="subject" placeholder="Subject"/>
-                <textarea placeholder="Your Message"></textarea>
+                <input name="subject" type="subject" placeholder="Subject"/>
+                <textarea name="message" placeholder="Your Message"></textarea>
                 <input type="submit" value="SEND"/>
             </form>
         </div>
@@ -240,9 +240,9 @@ while ($data = $works->fetch()) {
 
     <div id="loginbox" class="popup_box" style="display: none;">
         <div id="loginwindow" class="popup_window">
-            <form method="post" action="index.php?action=homeadmin">
-                <label for="pseudo">Mail</label>
-                <input type="email" name="pseudo" />
+            <form method="post" action="index.php?action=checkpassword">
+                <label for="pseudo">Pseudo</label>
+                <input type="text" name="pseudo" />
                 <br/><br/>
                 <label for="password">Mot de passe</label>
                 <input type="password" name="password" />

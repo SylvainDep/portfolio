@@ -274,23 +274,8 @@ while ($data = $works->fetch()) {
     <img src="../public/img/logo_jimdo.png"/>
     <img src="../public/img/logo_sncf.png"/>
     <p>Copyright © 2018 sylvaindepardieu.fr - All Rights Reserved.</p>
-    <a id="loginlink" class="popup_button">Admin Login</a>
+    <a id="loginlink" class="popup_button" href="index.php?action=logout">Logout</a>
 </section>
-
-<div id="loginbox" class="popup_box" style="display: none;">
-    <div id="loginwindow" class="popup_window">
-        <form method="post" action="index.php?action=homeadmin">
-            <label for="pseudo">Mail</label>
-            <input type="email" name="pseudo" />
-            <br/><br/>
-            <label for="password">Mot de passe</label>
-            <input type="password" name="password" />
-            <p><a href="index.php?action=passwordrecovery">Mot de passe oublié ?</a></p>
-            <br/><br/>
-            <input type="submit" value="Connexion">
-        </form>
-    </div>
-</div>
 
 <script type="text/javascript" src="../public/js/DOM.js"></script>
 <script type="text/javascript" src="../public/js/togglelogin.js"></script>

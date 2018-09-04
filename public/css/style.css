@@ -82,7 +82,7 @@ nav a {
 
 #hero_area {
     height: 450px;
-    width: 100%;
+    width: calc(100% - 10px);
     background: url("/public/img/background.png") no-repeat right bottom;
     background-size: cover;
     padding: 0 5px;

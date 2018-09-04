@@ -11,15 +11,26 @@
         display: block;
     }
 
+    nav img {
+        height: 40px;
+        margin: 10px auto 5px auto;
+    }
+
     nav ul {
         padding: 0px;
         flex-wrap: wrap;
-
+        justify-content: center;
+        font-size: 0.8em;
+        margin: 5px 0;
     }
 
     #hero_area {
         height: initial;
         width: calc(100% - 10px);
+    }
+
+    #hero_text {
+        padding: 20px 0;
     }
 
     #perso_skills {
@@ -50,6 +61,11 @@
         width: 70%
     }
 
+    .expertise_picture i {
+        width: 50px;
+        margin-left: 10px;
+    }
+
     #works_block {
         display: block;
     }
@@ -60,6 +76,8 @@
 
     #work_selector ul {
         flex-wrap: wrap;
+        justify-content: center;
+        font-size: 0.8em;
     }
 
     #contact {

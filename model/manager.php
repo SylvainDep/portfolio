@@ -6,7 +6,7 @@
  * Time: 15:51
  */
 
-namespace Portfolio\Model;
+namespace Model;
 
 class Manager
 {

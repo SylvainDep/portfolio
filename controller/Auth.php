@@ -6,7 +6,7 @@
  * Time: 10:50
  */
 
-namespace Portfolio\Controller;
+namespace Controller;
 
 require 'vendor/autoload.php';
 
@@ -27,6 +27,6 @@ class Auth
         session_destroy();
         $_SESSION = array();
 
-        require('view/frontend/logout.php');
+        header('Location: index.php');
     }
 }
