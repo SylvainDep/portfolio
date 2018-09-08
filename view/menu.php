@@ -1,27 +1,23 @@
-<?php ob_start(); ?>
-
 <nav>
     <img src="/public/img/logo.png" />
     <ul>
         <li>
-            <a href="<?= $_SERVER['REQUEST_URI'] . '/#body' ?>">Home</a>
+            <a href="/#body">Home</a>
         </li>
         <li>
-            <a href="<?= $_SERVER['REQUEST_URI'] . '/#about' ?>">About</a>
+            <a href="/#about">About</a>
         </li>
         <li>
-            <a href="<?= $_SERVER['REQUEST_URI'] . '/#expertise' ?>">Services</a>
+            <a href="/#expertise">Services</a>
         </li>
         <li>
-            <a href="<?= $_SERVER['REQUEST_URI'] . '/#works' ?>">Works</a>
+            <a href="/#works">Works</a>
         </li>
         <li>
-            <a href="<?= $_SERVER['REQUEST_URI'] . '/#contact' ?>">Contact</a>
+            <a href="/#contact">Contact</a>
         </li>
         <li>
-            <a href="<?= $_SERVER['REQUEST_URI'] . '/#contact' ?>">Hire me</a>
+            <a href="/#contact">Hire me</a>
         </li>
     </ul>
 </nav>
-
-<?php $nav = ob_get_clean(); ?>

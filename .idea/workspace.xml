@@ -3,40 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="b1efc2c3-2d25-4a7b-a71c-54c02f93336d" name="Default" comment="">
       <change afterPath="$PROJECT_DIR$/../Projet 3/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/adminboard.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/admin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/DOM.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/GoogleMaps.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/Launcher.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/QuotesAPI.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/togglelogin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/admin.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/adminmenu.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 3/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 4" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Projet 5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Projet 5.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/Auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/adminboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/adminboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/AdminManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/AdminManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/moduledisplay.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/moduledisplay.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/updater.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/updater.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/mobile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/mobile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/works/work_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/works/work_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/works/work_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/Launcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/Launcher.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/LauncherAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/LauncherAdmin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pdf/resume_sylvain_depardieu.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/public/pdf/resume_sylvain_depardieu.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/admin.twig" beforeDir="false" afterPath="$PROJECT_DIR$/view/admin.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/demo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/demo.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/separator.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/separator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/template.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +44,8 @@
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="25" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -75,8 +53,8 @@
           <entry key="css" value="3586" />
           <entry key="js" value="1256" />
           <entry key="json" value="10" />
-          <entry key="php" value="8694" />
-          <entry key="twig" value="1630" />
+          <entry key="php" value="8701" />
+          <entry key="twig" value="1635" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -85,8 +63,8 @@
           <entry key="HTML" value="8" />
           <entry key="JSON" value="10" />
           <entry key="JavaScript" value="1256" />
-          <entry key="PHP" value="8686" />
-          <entry key="Twig" value="1630" />
+          <entry key="PHP" value="8693" />
+          <entry key="Twig" value="1635" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
@@ -102,9 +80,9 @@
           <entry key="js" value="22" />
           <entry key="json" value="2" />
           <entry key="lock" value="1" />
-          <entry key="php" value="65" />
+          <entry key="php" value="68" />
           <entry key="png" value="2" />
-          <entry key="twig" value="5" />
+          <entry key="twig" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -114,9 +92,9 @@
           <entry key="Image" value="2" />
           <entry key="JSON" value="3" />
           <entry key="JavaScript" value="22" />
-          <entry key="PHP" value="65" />
+          <entry key="PHP" value="68" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Twig" value="5" />
+          <entry key="Twig" value="6" />
         </counts>
       </usages-collector>
     </session>
@@ -126,35 +104,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/admin.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="131" column="52" selection-start-line="131" selection-start-column="52" selection-end-line="131" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/router.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="77" column="83" selection-start-line="77" selection-start-column="83" selection-end-line="77" selection-end-column="83" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/demo.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="25" selection-start-column="25" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/template.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+            <state relative-caret-position="154">
+              <caret line="28" column="41" lean-forward="true" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -171,8 +122,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/GoogleMaps.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="23" column="52" lean-forward="true" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+            <state relative-caret-position="345">
+              <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -207,11 +158,38 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/demo.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="115" column="44" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
+            <state relative-caret-position="266">
+              <caret line="114" selection-start-line="114" selection-end-line="121" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/menu.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="9" lean-forward="true" selection-end-line="22" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view/adminmenu.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/separator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -228,7 +206,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>edit_expertise</find>
       <find>edit_language</find>
       <find>edit_skill</find>
       <find>conta</find>
@@ -258,6 +235,7 @@
       <find>separa</find>
       <find>lang</find>
       <find>langua</find>
+      <find>menu</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -266,14 +244,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/view/separator.php" />
         <option value="$PROJECT_DIR$/controller/Home.php" />
         <option value="$PROJECT_DIR$/public/js/DOM.js" />
         <option value="$PROJECT_DIR$/public/js/GalleryFilter.js" />
         <option value="$PROJECT_DIR$/public/js/togglelogin.js" />
         <option value="$PROJECT_DIR$/public/js/toggleaddwork.js" />
         <option value="$PROJECT_DIR$/public/css/admin.css" />
-        <option value="$PROJECT_DIR$/view/menu.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/model/manager.php" />
         <option value="$PROJECT_DIR$/model/moduledisplay.php" />
@@ -296,8 +272,11 @@
         <option value="$PROJECT_DIR$/public/js/LauncherAdmin.js" />
         <option value="$PROJECT_DIR$/public/js/GoogleMaps.js" />
         <option value="$PROJECT_DIR$/router.php" />
-        <option value="$PROJECT_DIR$/view/admin.twig" />
         <option value="$PROJECT_DIR$/view/demo.twig" />
+        <option value="$PROJECT_DIR$/view/menu.php" />
+        <option value="$PROJECT_DIR$/view/separator.php" />
+        <option value="$PROJECT_DIR$/view/admin.twig" />
+        <option value="$PROJECT_DIR$/view/adminmenu.php" />
       </list>
     </option>
   </component>
@@ -326,7 +305,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -365,6 +343,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -455,16 +434,18 @@
       <workItem from="1536129228609" duration="7470000" />
       <workItem from="1536217090874" duration="14249000" />
       <workItem from="1536305126597" duration="1475000" />
+      <workItem from="1536403413442" duration="873000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155220000" />
+    <option name="totallyTimeSpent" value="156093000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2067239" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20958512" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -499,13 +480,6 @@
     <entry file="file://$PROJECT_DIR$/public/img/andyone-26591-unsplash.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/separator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="5" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -533,13 +507,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="75" selection-start-line="9" selection-start-column="75" selection-end-line="9" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -634,9 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="38" selection-end-column="11" />
-          <folding>
-            <element signature="e#62#85#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -644,10 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="20" />
-          <folding>
-            <element signature="e#6#98#0#PHP" expanded="true" />
-            <element signature="e#160#184#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -679,6 +639,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1110">
+          <caret line="77" column="83" selection-start-line="77" selection-start-column="83" selection-end-line="77" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/view/demo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -697,6 +664,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/GoogleMaps.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -721,34 +698,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/GoogleMaps.js">
+    <entry file="file://$PROJECT_DIR$/view/demo.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="23" column="52" lean-forward="true" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="266">
+          <caret line="114" selection-start-line="114" selection-end-line="121" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/router.php">
+    <entry file="file://$PROJECT_DIR$/view/menu.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="77" column="83" selection-start-line="77" selection-start-column="83" selection-end-line="77" selection-end-column="83" />
+        <state relative-caret-position="315">
+          <caret line="21" column="9" lean-forward="true" selection-end-line="22" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/separator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/admin.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="131" column="52" selection-start-line="131" selection-start-column="52" selection-end-line="131" selection-end-column="52" />
+        <state relative-caret-position="154">
+          <caret line="28" column="41" lean-forward="true" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/demo.twig">
+    <entry file="file://$PROJECT_DIR$/view/adminmenu.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="115" column="44" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
+        <state relative-caret-position="60">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
         </state>
       </provider>
     </entry>
