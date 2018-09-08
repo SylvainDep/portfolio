@@ -5,6 +5,9 @@
       <sourceFolder url="file://$MODULE_DIR$/model" isTestSource="false" packagePrefix="Model\" />
       <sourceFolder url="file://$MODULE_DIR$/controller" isTestSource="false" packagePrefix="Controller\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/twig/twig" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

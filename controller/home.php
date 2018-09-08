@@ -2,27 +2,43 @@
 
 namespace Controller;
 
-require_once 'model/moduledisplay.php';
-require_once 'model/AdminManager.php';
+require 'vendor/autoload.php';
 
-use Portfolio\Model\AdminManager;
+use Model\AdminManager;
+use Model\ModuleDisplay;
 
 class Home
 {
+
     public function __construct()
     {
-        $moduledisplay = new \Portfolio\Model\ModuleDisplay;
+        $loader = new \Twig_Loader_Filesystem($_SERVER['DOCUMENT_ROOT'].'/view');
+        $twig = new \Twig_Environment($loader);
+
+        $moduledisplay = new ModuleDisplay;
         $introtext = $moduledisplay->getIntroText();
         $skill = $moduledisplay->getSkillData();
         $experience = $moduledisplay->getExperience();
         $education = $moduledisplay->getEducation();
         $expertise = $moduledisplay->getExpertise();
         $works = $moduledisplay->getWorks();
+        $works_style = $moduledisplay->getWorks();
         $contact = $moduledisplay->getContact();
         $languages = $moduledisplay->getLanguages();
 
-        require_once 'view/template.php';
+        echo $twig->render('demo.twig', array(
+            'introtext' => $introtext,
+            'skill' => $skill,
+            'education' => $education,
+            'experience' => $experience,
+            'expertise' => $expertise,
+            'works' => $works,
+            'works_style' => $works_style,
+            'contact' => $contact,
+            'language' => $languages
+        ));
     }
+
 
     static function checkPassword($userId, $userPassword)
     {

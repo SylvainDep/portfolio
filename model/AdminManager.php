@@ -2,7 +2,7 @@
 
 namespace Model;
 
-require_once("manager.php");
+require_once 'vendor/autoload.php';
 
 class AdminManager extends Manager
 {

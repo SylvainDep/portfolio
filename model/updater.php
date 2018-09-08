@@ -8,6 +8,7 @@
 
 namespace Model;
 
+require_once 'vendor/autoload.php';
 
 class Updater extends Manager
 {
@@ -45,13 +46,6 @@ class Updater extends Manager
             'location' => $location,
             'title' => $name,
             'description' => $description
-        ));
-
-        $password = password_hash("Solange78", PASSWORD_DEFAULT);
-
-        $hey = $db->prepare('UPDATE admin SET password = :password WHERE id = 1');
-        $hey->execute(array(
-            'password' => $password,
         ));
 
         return $updateddata;
@@ -120,14 +114,8 @@ class Updater extends Manager
             'category' => $category
         ));
 
-        return $addeddata;
-    }
+        $lastinsert = $db->lastInsertId();
 
-    public function getLastWorkId()
-    {
-        $db = $this->dbConnect();
-        $req = $db->lastInsertId();
-
-        return $req;
+        return $lastinsert;
     }
 }

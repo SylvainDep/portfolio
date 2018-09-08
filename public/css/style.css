@@ -10,7 +10,6 @@ section:not(:first-child) {
     width: 1200px;
     max-width: 100%;
     margin: auto;
-    height: 100%;
 }
 
 h1, h2, h3, h4, nav li, #works li {
@@ -38,6 +37,7 @@ p, label, input, a {
 
 header {
     position: fixed;
+    display: flex;
     height: 80px;
     width: 100%;
     background-color: white;
@@ -81,6 +81,7 @@ nav a {
 /* HERO */
 
 #hero_area {
+    display: flex;
     height: 450px;
     width: calc(100% - 10px);
     background: url("/public/img/background.png") no-repeat right bottom;
@@ -289,6 +290,29 @@ nav a {
     text-align: center;
 }
 
+/* QUOTES */
+
+#quotes {
+    padding: 50px 5px;
+    background: url("/public/img/quote_background.jpg") no-repeat right center;
+    background-size: cover;
+    color: white;
+}
+
+#quotes .content {
+    width: 600px;
+}
+
+#quote_text {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#quote_author {
+    text-align: right;
+    font-style: italic;
+}
+
 /* CONTACT */
 
 #contact {
@@ -378,9 +402,9 @@ nav a {
 
 /* MAP */
 
-#local_map {
+#map {
     width: 100%;
-    margin-bottom: -4px;
+    height: 400px;
 }
 
 /* CREDITS */

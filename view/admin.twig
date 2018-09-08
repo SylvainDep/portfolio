@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Sylvain Depardieu - Web tech allrounder</title>
+    <link href="public/css/style.css" rel="stylesheet" />
+    <link href="public/css/admin.css" rel="stylesheet" />
+    <link href="public/css/mobile.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <style>
+        {% for works_style in works_style %}
+            #work_sample_{{ works_style.id }} {
+                background: url("../public/img/works/work_{{ works_style.id }}.png") no-repeat center bottom;
+                background-size: cover;
+                width: calc(100% - 7px);
+                height: 200px;
+                border: 3px solid grey;
+            }
+        {% endfor %}
+    </style>
+</head>
+
+<body id="body">
+<section id="header">
+    <header>
+        <div class="content">
+            {% include 'menu.php' %}
+        </div>
+    </header>
+
+    <div id="hero_area">
+        <div class="content">
+            <div id="hero_text_area">
+                <div id="hero_text">
+                    <h1>Let's build something great together.</h1>
+                    <p>I am Sylvain Depardieu, <strong>french web all rounder</strong> based in <strong>Hamburg, Germany</strong>. We shall talk about your web projects.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h2>About me</h2>
+    {% include 'separator.php' %}
+    <div class="content">
+        <div id="perso_skills">
+            <div id="intro">
+                <h3>Who <strong>am I</strong>?</h3>
+                <form id="edit_introtext" method="post" action="index.php?action=editintrotext" >
+                    <textarea placeholder="Insert Intro Text Here" rows="8" name="description">{{ introtext.description }}</textarea>
+                    <input class="save" type="submit" value="Save">
+                </form>
+                <a id="download_resume">Download my CV (PDF)</a>
+                <form id="edit_resume" enctype="multipart/form-data" method="post" action="index.php?action=editresume">
+                    <input type="hidden" name="salut" />
+                    <input type="file" name="resume" />
+                    <input class="save" type="submit" value="Save">
+                </form>
+            </div>
+            <div id="skills">
+                <h3>Expert <strong>in</strong></h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam suscipit odio quam, a mollis turpis fringilla a. Sed lacinia, ligula cursus pellentesque feugiat, nisl neque consequat leo, nec commodo nibh ex rhoncus nibh.</p>
+                <div id="skill_charts">
+                    {% for skill in skill %}
+                        <form class="edit_skill" method="post" action="index.php?action=editskill&id={{ skill.id }}">
+                            <div id="edit_skill_window">
+                                <div class="skill_block">
+                                    <p>Skill {{ skill.id }}:<input class="edit_skillname" name="name" value="{{ skill.skill_name }}"/> Level :<input class="edit_level" name="level" value="{{ skill.skill_level }}"/>/100</p>
+                                </div>
+
+                            </div>
+                            <input class="save" type="submit" value="Save">
+                        </form>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div id="personal_path">
+            <div id="education">
+                <h3><strong>Ed</strong>ucation</h3>
+                {% for education in education %}
+                <form class="edit_education" method="post" action="index.php?action=editexperience&id={{ education.id }}">
+                    <div class="experience_block">
+                        <div class="context">
+                            <input name="period" value="{{ education.period }}"/>
+                            <textarea name="location" rows="4">{{ education.location }}</textarea>
+                        </div>
+                        <div class="main">
+                            <input name="name" value="{{ education.title }}"/>
+                            <textarea name="description" rows="4">{{ education.description }}</textarea>
+                        </div>
+                    </div>
+                    <input class="save" type="submit" value="Save">
+                </form>
+                {% endfor %}
+            </div>
+            <div id="experience">
+                <h3><strong>Ex</strong>perience</h3>
+                {% for experience in experience %}
+                <form class="edit_experience" method="post" action="index.php?action=editexperience&id={{ experience.id }}">
+                    <div class="experience_block">
+                        <div class="context">
+                            <input name="period" value="{{ experience.period }}"/>
+                            <textarea name="location" rows="4">{{ experience.location }}</textarea>
+                        </div>
+                        <div class="main">
+                            <input name="name" value="{{ experience.title }}"/>
+                            <textarea name="description" rows="4">{{ experience.description }}</textarea>
+                        </div>
+                    </div>
+                    <input class="save" type="submit" value="Save">
+                </form>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="expertise">
+    <h2>What I do</h2>
+    {% include 'separator.php' %}
+    <div class="content">
+        <div id="expertise_block">
+        {% for expertise in expertise %}
+            <div class="expertise_module">
+                <form class="edit_expertise" method="post" action="index.php?action=editexpertise&id={{ expertise.id }}">
+                    <div class="expertise_window">
+                        <div class="expertise_picture">
+                            {{ expertise.picture|raw }}
+                            <input name="picture" value="{{ expertise.picture }}"/>
+                        </div>
+                        <div class="expertise_text">
+                            <input name="title" value="{{ expertise.title }}"/>
+                            <textarea name="description" rows="4">{{ expertise.description }}</textarea>
+                        </div>
+                    </div>
+                    <input class="save" type="submit" value="Save">
+                </form>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="works">
+    <div class="content">
+        <h2>Previous works</h2>
+        {% include 'separator.php' %}
+        <div id="works_block">
+            {% for works in works %}
+            <div class="work_form">
+                <div id="work_sample_{{ works.id }}">
+                    <a href="{{ works.link }}" class="work_link"></a>
+                </div>
+                <form class="edit_work" enctype="multipart/form-data" method="post" action="index.php?action=editworks&id={{ works.id }}">
+                    <input type="file" name="picture" /><br/>
+                    <input name="link" value="{{ works.link }}"/><br/>
+                    <select name="category">
+                        <option value="{{ works.category }}">Current: {{ works.category }}</option>
+                        <option value="website">Website</option>
+                        <option value="seo">SEO</option>
+                        <option value="content">Content</option>
+                    </select>
+                    <input class="save" type="submit" value="Save">
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+        <a id="addworkbutton" class="popup_button">Add new Work</a>
+    </div>
+</section>
+
+<div id="addworkbox" class="popup_box" style="display: none;">
+    <div id="addworkwindow" class="popup_window">
+        <form id="add_work" enctype="multipart/form-data" method="post" action="index.php?action=addwork">
+            <input type="file" name="picture" /><br/>
+            <input name="link"/><br/>
+            <select name="category">
+                <option value="website">Website</option>
+                <option value="seo">SEO</option>
+                <option value="content">Content</option>
+            </select>
+            <input class="save" type="submit" value="Save">
+        </form>
+    </div>
+</div>
+
+<section id="quotes">
+    <div class="content">
+        <p id="quote_text"></p>
+        <p id="quote_author"></p>
+    </div>
+</section>
+
+<section id="contact">
+    <div id="contact_data">
+        <h2>Contact Address</h2>
+        {% include 'separator.php' %}
+        <form id="edit_contact" method="post" action="index.php?action=editcontact">
+            <div id="contact_list">
+                <input name="address" value="{{ contact.address }}"/><br/>
+                <input name="mail" value="{{ contact.mail }}"/><br/>
+                <input name="phone" value="{{ contact.phone }}"/>
+            </div>
+            <input class="save" type="submit" value="Save">
+        </form>
+        <div id="language_list">
+            {% for languages in language %}
+            <form class="edit_language" method="post" action="index.php?action=editlanguage&id={{ languages.id }}">
+                <div class="language_sample">
+                    <input name="language" value="{{ languages.languages }}"/><br/>
+                    <input name="level" value="{{ languages.language_level }}"/><br/>
+                </div>
+                <input class="save" type="submit" value="Save">
+            </form>
+            {% endfor %}
+        </div>
+    </div>
+    <div id="contact_form_block">
+        <h2>Get in touch !</h2>
+        {% include 'separator.php' %}
+        <form id="contact_form" method="get" action="index.php">
+            <div id="basic_contact_data">
+                <input type="text" placeholder="Name"/>
+                <input type="email" placeholder="Your email"/>
+            </div>
+            <input type="subject" placeholder="Subject"/>
+            <textarea placeholder="Your Message"></textarea>
+            <input type="submit" value="SEND"/>
+        </form>
+    </div>
+</section>
+
+<div id="map"></div>
+
+<section id="credits">
+    <img src="../public/img/logo_jimdo.png"/>
+    <img src="../public/img/logo_sncf.png"/>
+    <p>Copyright © 2018 sylvaindepardieu.fr - All Rights Reserved.</p>
+    <a id="loginlink" class="popup_button" href="index.php?action=logout">Logout</a>
+</section>
+
+<script type="text/javascript" src="../public/js/DOM.js"></script>
+<script type="text/javascript" src="../public/js/togglelogin.js"></script>
+<script type="text/javascript" src="../public/js/QuotesAPI.js"></script>
+<script type="text/javascript" src="../public/js/toggleaddwork.js"></script>
+<script type="text/javascript" src="../public/js/LauncherAdmin.js"></script>
+<script type="text/javascript" src="../public/js/GoogleMaps.js"></script>
+<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHXtkI0apadBzd52DueRSs4COXj1Thk-k&amp;callback=GoogleMap.init">
+</script>
+</body>
+</html>

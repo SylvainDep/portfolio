@@ -1,2 +1,2 @@
 ToggleAddWork.init();
-ToggleLogin.init();
+Quotes.getFromAPI();

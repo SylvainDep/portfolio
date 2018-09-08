@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Sylvain Depardieu - Web tech allrounder</title>
+    <link href="public/css/style.css" rel="stylesheet" />
+    <link href="public/css/mobile.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <style>
+        {% for works_style in works_style %}
+            #work_sample_{{ works_style.id }} {
+                background: url("../public/img/works/work_{{ works_style.id }}.png") no-repeat center bottom;
+                background-size: cover;
+                width: 30%;
+                height: 200px;
+                border: 3px solid grey;
+            }
+        {% endfor %}
+    </style>
+</head>
+
+<body id="body">
+<section id="header">
+    <header>
+        <div class="content">
+            {% include'menu.php' %}
+        </div>
+    </header>
+
+    <div id="hero_area">
+        <div class="content">
+            <div id="hero_text_area">
+                <div id="hero_text">
+                    <h1>Let's build something great together.</h1>
+                    <p>I am Sylvain Depardieu, <strong>french web all rounder</strong> based in <strong>Hamburg, Germany</strong>. We shall talk about your web projects.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h2>About me</h2>
+    {% include 'separator.php' %}
+    <div class="content">
+        <div id="perso_skills">
+            <div id="intro">
+                <h3>Who <strong>am I</strong>?</h3>
+                <p>{{ introtext.description }}</p>
+                <a id="download_resume" href="../public/pdf/resume_sylvain_depardieu.pdf">Download my CV (PDF)</a>
+            </div>
+            <div id="skills">
+                <h3>Expert <strong>in</strong></h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam suscipit odio quam, a mollis turpis fringilla a. Sed lacinia, ligula cursus pellentesque feugiat, nisl neque consequat leo, nec commodo nibh ex rhoncus nibh.</p>
+                <div id="skill_charts">
+                    {% for skill in skill %}
+                    <div class="skill_block">
+                        <div class="skill_name">
+                            <p>{{ skill.skill_name }}</p>
+                        </div>
+                        <div class="skill_bar">
+                            <div class="skill_level" style="width: {{ skill.skill_level }}%;"></div>
+                            <div class="skill_rest" style="width: calc(100% - {{ skill.skill_level }}%);"></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div id="personal_path">
+            <div id="education">
+                <h3><strong>Ed</strong>ucation</h3>
+                {% for education in education %}
+                <div class="experience_block">
+                    <div class="context">
+                        <p>{{ education.period }}</p>
+                        <p>{{ education.location }}</p>
+                    </div>
+                    <div class="main">
+                        <h4>{{ education.title }}</h4>
+                        <p>{{ education.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div id="experience">
+                <h3><strong>Ex</strong>perience</h3>
+                {% for experience in experience %}
+                <div class="experience_block">
+                    <div class="context">
+                        <p>{{ experience.period }}</p>
+                        <p>{{ experience.location }}</p>
+                    </div>
+                    <div class="main">
+                        <h4>{{ experience.title }}</h4>
+                        <p>{{ experience.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section id="expertise">
+    <h2>What I do</h2>
+    {% include 'separator.php' %}
+    <div class="content">
+        <div id="expertise_block">
+            {% for expertise in expertise %}
+            <div class="expertise_module">
+                <div class="expertise_picture">
+                    {{ expertise.picture|raw }}
+                </div>
+                <div class="expertise_text">
+                    <h3>{{ expertise.title }}</h3>
+                    <p>{{ expertise.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="works">
+    <div class="content">
+        <h2>Previous works</h2>
+        {% include 'separator.php' %}
+        <div id="work_selector">
+            <ul>
+                <li id="selector_all" class="current">All</li>
+                <li id="selector_websites" class="hidden">Websites</li>
+                <li id="selector_seo" class="hidden">SEO</li>
+                <li id="selector_content" class="hidden">Content</li>
+            </ul>
+        </div>
+        <div id="works_block">
+            {% for works in works %}
+            <div id="work_sample_{{ works.id }}" class="{{ works.category }}_work" style="display: block;">
+                <a href="{{ works.link }}" class="work_link">
+                    <div class="work_icon">
+                        <div>
+                            <i class="fas fa-eye"></i>
+                            <p>{{ works.link }}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="quotes">
+    <div class="content">
+        <p id="quote_text"></p>
+        <p id="quote_author"></p>
+    </div>
+</section>
+
+<section id="contact">
+    <div id="contact_data">
+        <h2>Contact Address</h2>
+        {% include 'separator.php' %}
+        <div id="contact_list">
+            <p><i class="fas fa-map-marker-alt"></i>{{ contact.address }}</p>
+            <p><i class="fas fa-envelope"></i>{{ contact.mail }}</p>
+            <p><i class="fas fa-phone"></i>{{ contact.phone }}</p>
+        </div>
+        <div id="language_list">
+            {% for language in language %}
+            <div class="language_sample">
+                <p>{{ language.languages }}</p>
+                <p>{{ language.language_level }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div id="contact_form_block">
+        <h2>Get in touch !</h2>
+        {% include 'separator.php' %}
+        <form id="contact_form" method="post" action="index.php?action=contactmail">
+            <div id="basic_contact_data">
+                <input name="name" type="text" placeholder="Name"/>
+                <input name="email" type="email" placeholder="Your email"/>
+            </div>
+            <input name="subject" type="subject" placeholder="Subject"/>
+            <textarea name="message" placeholder="Your Message"></textarea>
+            <input type="submit" value="SEND"/>
+        </form>
+    </div>
+</section>
+
+<div id="map"></div>
+
+<section id="credits">
+    <img src="../public/img/logo_jimdo.png"/>
+    <img src="../public/img/logo_sncf.png"/>
+    <p>Copyright © 2018 sylvaindepardieu.fr - All Rights Reserved.</p>
+    <a id="loginlink" class="popup_button">Admin Login</a>
+</section>
+
+<div id="loginbox" class="popup_box" style="display: none;">
+    <div id="loginwindow" class="popup_window">
+        <form method="post" action="index.php?action=checkpassword">
+            <label for="pseudo">Pseudo</label>
+            <input type="text" name="pseudo" />
+            <br/><br/>
+            <label for="password">Mot de passe</label>
+            <input type="password" name="password" />
+            <p><a href="index.php?action=passwordrecovery">Mot de passe oublié ?</a></p>
+            <br/><br/>
+            <input type="submit" value="Connexion">
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="../public/js/DOM.js"></script>
+<script type="text/javascript" src="../public/js/GalleryFilter.js"></script>
+<script type="text/javascript" src="../public/js/togglelogin.js"></script>
+<script type="text/javascript" src="../public/js/QuotesAPI.js"></script>
+<script type="text/javascript" src="../public/js/Launcher.js"></script>
+<script type="text/javascript" src="../public/js/GoogleMaps.js"></script>
+<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHXtkI0apadBzd52DueRSs4COXj1Thk-k&amp;callback=GoogleMap.init">
+</script>
+</body>
+</html>

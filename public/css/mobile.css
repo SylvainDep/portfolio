@@ -53,6 +53,10 @@
         display: block;
     }
 
+    .expertise_module {
+        width: 100%;
+    }
+
     .experience_block .context {
         width: 30%;
     }

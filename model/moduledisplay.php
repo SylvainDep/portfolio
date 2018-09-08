@@ -8,7 +8,7 @@
 
 namespace Model;
 
-require_once("manager.php");
+require 'vendor/autoload.php';
 
 class ModuleDisplay extends Manager
 {

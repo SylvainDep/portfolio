@@ -8,8 +8,6 @@
 
 namespace Controller;
 
-require 'vendor/autoload.php';
-
 class Auth
 {
     public static function isAuth(){

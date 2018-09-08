@@ -1,7 +1,6 @@
 <?php
 
-require 'debug.php';
-require 'router.php';
+require 'vendor/autoload.php';
 
 $router = new \App\config\Router();
 $router->start();

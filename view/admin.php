@@ -67,6 +67,7 @@ while ($data = $works->fetch()) {
                 </form>
                 <a id="download_resume">Download my CV (PDF)</a>
                 <form id="edit_resume" enctype="multipart/form-data" method="post" action="index.php?action=editresume">
+                    <input type="hidden" name="salut" />
                     <input type="file" name="resume" />
                     <input class="save" type="submit" value="Save">
                 </form>

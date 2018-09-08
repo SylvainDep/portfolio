@@ -8,26 +8,41 @@
 
 namespace Controller;
 
-use Portfolio\Model\Updater;
-use Exception;
+require_once 'vendor/autoload.php';
 
-include_once 'model/updater.php';
+use Model\ModuleDisplay;
+use Model\Updater;
+use Exception;
 
 class AdminBoard
 {
     public function __construct()
     {
-        $moduledisplay = new \Portfolio\Model\ModuleDisplay;
+        $loader = new \Twig_Loader_Filesystem($_SERVER['DOCUMENT_ROOT'].'/view');
+        $twig = new \Twig_Environment($loader);
+
+        $moduledisplay = new ModuleDisplay;
         $introtext = $moduledisplay->getIntroText();
         $skill = $moduledisplay->getSkillData();
         $experience = $moduledisplay->getExperience();
         $education = $moduledisplay->getEducation();
         $expertise = $moduledisplay->getExpertise();
         $works = $moduledisplay->getWorks();
+        $works_style = $moduledisplay->getWorks();
         $contact = $moduledisplay->getContact();
         $languages = $moduledisplay->getLanguages();
 
-        require_once 'view/admin.php';
+        echo $twig->render('admin.twig', array(
+            'introtext' => $introtext,
+            'skill' => $skill,
+            'education' => $education,
+            'experience' => $experience,
+            'expertise' => $expertise,
+            'works' => $works,
+            'works_style' => $works_style,
+            'contact' => $contact,
+            'language' => $languages
+        ));
     }
 
     static function editIntrotext($description)
@@ -105,33 +120,38 @@ class AdminBoard
     {
         $updater = new Updater();
 
-        $updater->insertWorks($link, $category);
+        $lastinsert = $updater->insertWorks($link, $category);
 
-        $lastinsert = $updater->getLastWorkId();
-        echo $lastinsert;
-        echo $picture['tmp_name'];
+        if (move_uploaded_file($picture['tmp_name'], 'public/img/works/work_' . $lastinsert . '.png')) {
+            header('Location: index.php?action=homeadmin');
+        } else {
+            throw new Exception('Impossible d\'ajouter l\'article !');
+        }
     }
 
     static function editResume($resume)
     {
-        unlink('public/pdf/resume_sylvain_depardieu.pdf'); //remove the file
+        $errors     = array();
+        $maxsize    = 2097152;
+        $acceptable = array(
+            'application/pdf'
+        );
 
-        $target_file = $target_dir . basename($resume["name"]);
-        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
-        // Limit size to 5Mb
-        if ($resume["size"] > 5000000) {
-            throw new Exception('Impossible d\'ajouter l\'article !');
-        } elseif ($imageFileType != "jpg") {
-            throw new Exception('Impossible d\'ajouter l\'article !');
-        } else {
-            if (move_uploaded_file($resume['tmp_name'], 'public/pdf/resume_sylvain_depardieu.pdf')) {
-                header('Location: index.php?action=homeadmin');
-            } else {
-                throw new Exception('Impossible d\'ajouter l\'article !');
-            }
+        if(($resume['size'] >= $maxsize) || ($resume["size"] == 0)) {
+            $errors[] = 'File too large. File must be less than 2 megabytes.';
         }
 
-        header('Location: index.php?action=homeadmin');
+        if(!in_array($resume['type'], $acceptable) && !empty($resume['type'])) {
+            $errors[] = 'Invalid file type. Only PDF, JPG, GIF and PNG types are accepted.';
+        }
+
+        if(count($errors) === 0) {
+            move_uploaded_file($resume['tmp_name'], 'public/pdf/resume_sylvain_depardieu.pdf');
+            header('Location: index.php?action=homeadmin');
+        } else {
+            foreach($errors as $error) {
+                echo '<script>alert("'.$error.'");</script>';
+            }
+        }
     }
 }
