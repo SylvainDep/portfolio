@@ -1,0 +1,138 @@
+@media screen and (max-width: 768px) {
+    body {
+        background-color: red;
+    }
+
+    header {
+        height: auto;
+    }
+
+    nav {
+        display: block;
+    }
+
+    nav img {
+        height: 40px;
+        margin: 10px auto 5px auto;
+    }
+
+    nav ul {
+        padding: 0px;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 0.8em;
+        margin: 5px 0;
+    }
+
+    #hero_area {
+        height: initial;
+        width: calc(100% - 10px);
+    }
+
+    #hero_text {
+        padding: 20px 0;
+    }
+
+    #edit_introtext textarea {
+        width: calc(100% - 8px);
+    }
+
+    #edit_resume input[type=file]{
+        max-width: 100%;
+    }
+
+    #perso_skills {
+        display: block;
+    }
+
+    #perso_skills > * {
+        width: 100%;
+    }
+
+    #personal_path {
+        display: block;
+    }
+
+    #personal_path > * {
+        width: 100%;
+    }
+
+    #expertise_block {
+        display: block;
+    }
+
+    .expertise_module {
+        width: 100%;
+    }
+
+    .experience_block {
+        display: block;
+    }
+
+    .experience_block .context {
+        width: 100%;
+    }
+
+    .experience_block .main {
+        width: 100%
+    }
+
+    .expertise_picture i {
+        width: 50px;
+        margin-left: 10px;
+    }
+
+    #works_block {
+        display: block;
+    }
+
+    #works_block > * {
+        width: calc(100% - 14px)!important;
+    }
+
+    #work_selector ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 0.8em;
+    }
+
+    #works_block input[type=file]{
+        max-width: 100%;
+    }
+
+    #contact {
+        display: block;
+    }
+
+    #contact > * {
+        width: 100%;
+        padding: 0;
+    }
+
+    #language_list {
+        display: block;
+    }
+
+    .language_sample {
+        border-right-width: 0px;
+        padding: 0px;
+    }
+
+    .language_sample p:first-child {
+        font-weight: bold;
+        display: inline-block;
+        width: 40%;
+    }
+
+    .language_sample p:last-child {
+        display: inline-block;
+    }
+
+    .edit_language {
+        width: 100%;
+    }
+
+    .edit_language input[name=language], .edit_language input[name=level] {
+        width: calc(100% - 14px);
+    }
+}

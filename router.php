@@ -107,6 +107,12 @@ class Router
                             throw new Exception('Please fill all the fields before submiting<br/><a href="javascript:history.back()">Return to homepage</a>');
                         }
                         break;
+                    case 'removeworks':
+                        if(!empty($_GET['id']) AND $_GET['id'] > 0 ) {
+                            AdminBoard::removeWorks($_GET['id']);
+                        } else {
+                            throw new Exception('Work to delete unmatched<br/><a href="javascript:history.back()">Return to admin page</a>');
+                        }
                     default:
                         new Home();
                 }

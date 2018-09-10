@@ -99,21 +99,46 @@ class AdminBoard
         header('Location: index.php?action=homeadmin');
     }
 
+    static function removeWorks($id)
+    {
+        $updater = new Updater();
+
+        $updater->deleteWorks($id);
+
+        header('Location: index.php?action=homeadmin');
+    }
+
     static function editWorks($id, $picture, $link, $category)
     {
         $updater = new Updater();
 
         $updater->setWorks($id, $link, $category);
 
-        unlink('public/img/works/work_' . $id . '.png'); //remove the file
+        $errors     = array();
+        $maxsize    = 2097152;
+        $acceptable = array(
+            'image/jpeg',
+            'image/jpg',
+            'image/png',
+            'image/gif'
+        );
 
-        if (move_uploaded_file($picture['tmp_name'], 'public/img/works/work_' . $id . '.png')) {
-            echo 'all good';
-        } else {
-            echo 'meeeeh';
+        if(($picture['size'] >= $maxsize) || ($picture["size"] == 0)) {
+            $errors[] = 'File too large. File must be less than 2 megabytes.';
         }
 
-        header('Location: index.php?action=homeadmin');
+        if(!in_array($picture['type'], $acceptable) && !empty($picture['type'])) {
+            $errors[] = 'Invalid file type. Only JPG, GIF and PNG types are accepted.';
+        }
+
+        if(count($errors) === 0) {
+            move_uploaded_file($picture['tmp_name'], 'public/img/works/work_' . $id . '.png');
+            header('Location: index.php?action=homeadmin');
+        } else {
+            foreach($errors as $error) {
+                echo $error;
+            }
+        }
     }
 
     static function addWorks($picture, $link, $category)
@@ -122,10 +147,30 @@ class AdminBoard
 
         $lastinsert = $updater->insertWorks($link, $category);
 
-        if (move_uploaded_file($picture['tmp_name'], 'public/img/works/work_' . $lastinsert . '.png')) {
+        $errors     = array();
+        $maxsize    = 2097152;
+        $acceptable = array(
+            'image/jpeg',
+            'image/jpg',
+            'image/png',
+            'image/gif'
+        );
+
+        if(($picture['size'] >= $maxsize) || ($picture["size"] == 0)) {
+            $errors[] = 'File too large. File must be less than 2 megabytes.';
+        }
+
+        if(!in_array($picture['type'], $acceptable) && !empty($picture['type'])) {
+            $errors[] = 'Invalid file type. Only JPG, GIF and PNG types are accepted.';
+        }
+
+        if(count($errors) === 0) {
+            move_uploaded_file($picture['tmp_name'], 'public/img/works/work_' . $lastinsert . '.png');
             header('Location: index.php?action=homeadmin');
         } else {
-            throw new Exception('Impossible d\'ajouter l\'article !');
+            foreach($errors as $error) {
+                echo $error;
+            }
         }
     }
 
@@ -142,7 +187,7 @@ class AdminBoard
         }
 
         if(!in_array($resume['type'], $acceptable) && !empty($resume['type'])) {
-            $errors[] = 'Invalid file type. Only PDF, JPG, GIF and PNG types are accepted.';
+            $errors[] = 'Invalid file type. Only PDF type is accepted.';
         }
 
         if(count($errors) === 0) {
@@ -150,7 +195,7 @@ class AdminBoard
             header('Location: index.php?action=homeadmin');
         } else {
             foreach($errors as $error) {
-                echo '<script>alert("'.$error.'");</script>';
+                echo $error;
             }
         }
     }

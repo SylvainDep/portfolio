@@ -5,7 +5,7 @@
     <title>Sylvain Depardieu - Web tech allrounder</title>
     <link href="public/css/style.css" rel="stylesheet" />
     <link href="public/css/admin.css" rel="stylesheet" />
-    <link href="public/css/mobile.css" rel="stylesheet" />
+    <link href="public/css/adminmobile.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
@@ -165,6 +165,9 @@
                         <option value="content">Content</option>
                     </select>
                     <input class="save" type="submit" value="Save">
+                    <a class="works_trashbin" href="index.php?action=removeworks&id={{ works.id }}">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
                 </form>
             </div>
             {% endfor %}

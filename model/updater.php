@@ -118,4 +118,15 @@ class Updater extends Manager
 
         return $lastinsert;
     }
+
+    public function deleteWorks($id)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('DELETE FROM works WHERE id = :id');
+        $deleteddata = $req->execute(array(
+            'id' => $id
+        ));
+
+        return $deleteddata;
+    }
 }
