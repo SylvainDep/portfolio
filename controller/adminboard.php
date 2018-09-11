@@ -31,6 +31,11 @@ class AdminBoard
         $works_style = $moduledisplay->getWorks();
         $contact = $moduledisplay->getContact();
         $languages = $moduledisplay->getLanguages();
+        $origin = '';
+
+        if (!empty($_GET['origin'])) {
+            $origin = $_GET['origin'];
+        }
 
         echo $twig->render('admin.twig', array(
             'introtext' => $introtext,
@@ -41,17 +46,24 @@ class AdminBoard
             'works' => $works,
             'works_style' => $works_style,
             'contact' => $contact,
-            'language' => $languages
+            'language' => $languages,
+            'origin' => $origin
         ));
     }
 
+
     static function editIntrotext($description)
     {
+        if(Auth::isAuth()) {
         $updater = new Updater();
 
         $updater->setIntrotext($description);
 
-        header('Location: index.php?action=homeadmin');
+        header('Location: index.php?action=homeadmin&origin=editedintrotext');
+        }  else {
+            Auth::logout();
+        }
+
     }
 
     static function editSkill($id, $name, $level)
@@ -60,7 +72,7 @@ class AdminBoard
 
         $updater->setSkill($id, $name, $level);
 
-        header('Location: index.php?action=homeadmin');
+        header('Location: index.php?action=homeadmin&origin=editedskill');
     }
 
     static function editExperience($id, $period, $location, $name, $description)
@@ -69,7 +81,7 @@ class AdminBoard
 
         $updater->setExperience($id, $period, $location, $name, $description);
 
-        header('Location: index.php?action=homeadmin');
+        header('Location: index.php?action=homeadmin&origin=editedexperience');
     }
 
     static function editExpertise($id, $picture, $title, $description)
@@ -78,7 +90,7 @@ class AdminBoard
 
         $updater->setExpertise($id, $picture, $title, $description);
 
-        header('Location: index.php?action=homeadmin');
+        header('Location: index.php?action=homeadmin&origin=editedexpertise');
     }
 
     static function editContact($address, $mail, $phone)
@@ -87,7 +99,7 @@ class AdminBoard
 
         $updater->setContact($address, $mail, $phone);
 
-        header('Location: index.php?action=homeadmin');
+        header('Location: index.php?action=homeadmin&origin=editedcontact');
     }
 
     static function editLanguage($id, $language, $level)
@@ -96,7 +108,7 @@ class AdminBoard
 
         $updater->setLanguage($id, $language, $level);
 
-        header('Location: index.php?action=homeadmin');
+        header('Location: index.php?action=homeadmin&origin=editedlanguage');
     }
 
     static function removeWorks($id)
@@ -105,7 +117,7 @@ class AdminBoard
 
         $updater->deleteWorks($id);
 
-        header('Location: index.php?action=homeadmin');
+        header('Location: index.php?action=homeadmin&origin=removedwork');
     }
 
     static function editWorks($id, $picture, $link, $category)
@@ -133,7 +145,7 @@ class AdminBoard
 
         if(count($errors) === 0) {
             move_uploaded_file($picture['tmp_name'], 'public/img/works/work_' . $id . '.png');
-            header('Location: index.php?action=homeadmin');
+            header('Location: index.php?action=homeadmin&origin=editedwork');
         } else {
             foreach($errors as $error) {
                 echo $error;
@@ -166,7 +178,7 @@ class AdminBoard
 
         if(count($errors) === 0) {
             move_uploaded_file($picture['tmp_name'], 'public/img/works/work_' . $lastinsert . '.png');
-            header('Location: index.php?action=homeadmin');
+            header('Location: index.php?action=homeadmin&origin=addedwork');
         } else {
             foreach($errors as $error) {
                 echo $error;
@@ -192,7 +204,7 @@ class AdminBoard
 
         if(count($errors) === 0) {
             move_uploaded_file($resume['tmp_name'], 'public/pdf/resume_sylvain_depardieu.pdf');
-            header('Location: index.php?action=homeadmin');
+            header('Location: index.php?action=homeadmin&origin=editedresume');
         } else {
             foreach($errors as $error) {
                 echo $error;

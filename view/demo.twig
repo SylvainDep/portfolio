@@ -218,6 +218,12 @@
     </div>
 </div>
 
+{% if origin == 'sentemail' %}
+    <p id="confirmationmodalcontainer">Your message has been sent.</p>
+{% elseif origin == 'loggedout' %}
+    <p id="confirmationmodalcontainer">You are logged out.</p>
+{% endif %}
+
 <script type="text/javascript" src="../public/js/DOM.js"></script>
 <script type="text/javascript" src="../public/js/GalleryFilter.js"></script>
 <script type="text/javascript" src="../public/js/togglelogin.js"></script>

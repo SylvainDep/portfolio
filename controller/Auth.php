@@ -14,7 +14,6 @@ class Auth
         if(isset($_SESSION['auth'])) {
             return $_SESSION['auth'] === true;
         }
-
     }
 
     public static function auth(){
@@ -25,6 +24,6 @@ class Auth
         session_destroy();
         $_SESSION = array();
 
-        header('Location: index.php');
+        header('Location: index.php?origin=loggedout');
     }
 }

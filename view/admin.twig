@@ -246,6 +246,28 @@
     <a id="loginlink" class="popup_button" href="index.php?action=logout">Logout</a>
 </section>
 
+{% if origin == 'editedintrotext' %}
+    <p id="confirmationmodalcontainer">The introduction text has been updtaed.</p>
+{% elseif origin == 'editedskill' %}
+    <p id="confirmationmodalcontainer">The skill has been updated.</p>
+{% elseif origin == 'editedexperience' %}
+    <p id="confirmationmodalcontainer">The experience/education has been updated.</p>
+{% elseif origin == 'editedexpertise' %}
+    <p id="confirmationmodalcontainer">The expertise area has been updated.</p>
+{% elseif origin == 'editedcontact' %}
+    <p id="confirmationmodalcontainer">The contact data has been updated.</p>
+{% elseif origin == 'editedlanguage' %}
+    <p id="confirmationmodalcontainer">The language and related level have been updated.</p>
+{% elseif origin == 'removedwork' %}
+    <p id="confirmationmodalcontainer">The project overview has been removed.</p>
+{% elseif origin == 'editedwork' %}
+    <p id="confirmationmodalcontainer">The project overview has been updated.</p>
+{% elseif origin == 'addedwork' %}
+    <p id="confirmationmodalcontainer">The project overview has been added.</p>
+{% elseif origin == 'editedresume' %}
+    <p id="confirmationmodalcontainer">The PDF resume file has been replaced.</p>
+{% endif %}
+
 <script type="text/javascript" src="../public/js/DOM.js"></script>
 <script type="text/javascript" src="../public/js/togglelogin.js"></script>
 <script type="text/javascript" src="../public/js/QuotesAPI.js"></script>

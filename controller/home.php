@@ -12,7 +12,7 @@ class Home
 
     public function __construct()
     {
-        $loader = new \Twig_Loader_Filesystem($_SERVER['DOCUMENT_ROOT'].'/view');
+        $loader = new \Twig_Loader_Filesystem($_SERVER['DOCUMENT_ROOT'] . '/view');
         $twig = new \Twig_Environment($loader);
 
         $moduledisplay = new ModuleDisplay;
@@ -25,6 +25,11 @@ class Home
         $works_style = $moduledisplay->getWorks();
         $contact = $moduledisplay->getContact();
         $languages = $moduledisplay->getLanguages();
+        $origin = '';
+
+        if (!empty($_GET['origin'])) {
+            $origin = $_GET['origin'];
+        }
 
         echo $twig->render('demo.twig', array(
             'introtext' => $introtext,
@@ -35,7 +40,8 @@ class Home
             'works' => $works,
             'works_style' => $works_style,
             'contact' => $contact,
-            'language' => $languages
+            'language' => $languages,
+            'origin' => $origin
         ));
     }
 
@@ -88,6 +94,6 @@ class Home
                        Signature:' . $name
         );
 
-        header('Location: index.php');
+        header('Location: index.php?origin=sentemail');
     }
 }

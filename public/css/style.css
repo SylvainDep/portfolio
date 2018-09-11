@@ -466,3 +466,30 @@ nav a {
     color: white;
     background-color: dimgrey;
 }
+
+/* CONFIRMATION MODAL */
+
+@keyframes disappear {
+    0%   {opacity: 0;}
+    15%  {opacity: 1;}
+    85%  {opacity: 1;}
+    100%  {opacity: 0;}
+}
+
+#confirmationmodalcontainer {
+    display: block;
+    margin: 0;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: green;
+    color: white;
+    padding: 15px 30px;
+    animation-name: disappear;
+    -webkit-animation-duration: 5s;
+    -moz-animation-duration: 5s;
+    -o-animation-duration: 5s;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    z-index: 2999;
+}
