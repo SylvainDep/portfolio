@@ -1,20 +1,14 @@
-/* === APPEL DES STATIONS DECAUX ==== */
-
 var Quotes = (function () {
 
     var self = {};
 
-    /* CHARGEMENT DES FICHIERS DEPUIS L'API */
-
-    // Va chercher les données sur le serveur Decaux
     self.getFromAPI = function () {
 
-        // appel l'API Decaux, et transforme les objets en tableau
         ajaxGet("https://talaikis.com/api/quotes/random/", function (data) {
             var quotes = JSON.parse(data);
 
-            document.getElementById("quote_text").textContent = quotes.quote;
-            document.getElementById("quote_author").textContent = quotes.author;
+            document.getElementById("quote_text").textContent = "\"" + quotes.quote + "\"";
+            document.getElementById("quote_author").textContent = "- " + quotes.author;
         });
     }
 

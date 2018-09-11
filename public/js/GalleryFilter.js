@@ -1,10 +1,6 @@
-/* ==== MODAL === */
-
 var GalleryFilter = (function () {
 
     var self = {};
-
-    /* LANCEMENT DE COMMANDE */
 
     self.init = function () {
         Gallery.ButtonWebsite.addEventListener("click", function (e) {

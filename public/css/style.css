@@ -3,7 +3,7 @@ body {
 }
 
 section:not(:first-child) {
-    padding: 20px 5px;
+    padding: 50px 5px;
 }
 
 .content {
@@ -252,7 +252,7 @@ nav a {
 
 #works_block {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
@@ -293,7 +293,7 @@ nav a {
 /* QUOTES */
 
 #quotes {
-    padding: 50px 5px;
+    padding: 80px 5px;
     background: url("/public/img/quote_background.jpg") no-repeat right center;
     background-size: cover;
     color: white;
@@ -411,7 +411,6 @@ nav a {
 
 #credits {
     background-color: dimgrey;
-    padding: 40px 0;
     text-align: center;
 }
 

@@ -1,5 +1,3 @@
-/* === TRANSFORMATION DU DOM EN OBJET JS === */
-
 var LoginProcess = (function () {
 
     var self = {

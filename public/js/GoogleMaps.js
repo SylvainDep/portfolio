@@ -1,5 +1,3 @@
-/* === GOOGLE MAP ==== */
-
 var GoogleMap = (function () {
 
     var self = {};

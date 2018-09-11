@@ -1,10 +1,6 @@
-/* ==== MODAL === */
-
 var ToggleLogin = (function () {
 
     var self = {};
-
-    /* LANCEMENT DE COMMANDE */
 
     self.init = function () {
         LoginProcess.LoginLink.addEventListener("click", function (e) {
