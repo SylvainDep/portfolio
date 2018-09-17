@@ -18,41 +18,37 @@ class AdminBoard
 {
     public function __construct()
     {
-        if(Auth::isAuth()) {
-            $loader = new \Twig_Loader_Filesystem($_SERVER['DOCUMENT_ROOT'].'/view');
-            $twig = new \Twig_Environment($loader);
+        $loader = new \Twig_Loader_Filesystem($_SERVER['DOCUMENT_ROOT'].'/view');
+        $twig = new \Twig_Environment($loader);
 
-            $moduledisplay = new ModuleDisplay;
-            $introtext = $moduledisplay->getIntroText();
-            $skill = $moduledisplay->getSkillData();
-            $experience = $moduledisplay->getExperience();
-            $education = $moduledisplay->getEducation();
-            $expertise = $moduledisplay->getExpertise();
-            $works = $moduledisplay->getWorks();
-            $works_style = $moduledisplay->getWorks();
-            $contact = $moduledisplay->getContact();
-            $languages = $moduledisplay->getLanguages();
-            $origin = '';
+        $moduledisplay = new ModuleDisplay;
+        $introtext = $moduledisplay->getIntroText();
+        $skill = $moduledisplay->getSkillData();
+        $experience = $moduledisplay->getExperience();
+        $education = $moduledisplay->getEducation();
+        $expertise = $moduledisplay->getExpertise();
+        $works = $moduledisplay->getWorks();
+        $works_style = $moduledisplay->getWorks();
+        $contact = $moduledisplay->getContact();
+        $languages = $moduledisplay->getLanguages();
+        $origin = '';
 
-            if (!empty($_GET['origin'])) {
-                $origin = $_GET['origin'];
-            }
-
-            echo $twig->render('admin.twig', array(
-                'introtext' => $introtext,
-                'skill' => $skill,
-                'education' => $education,
-                'experience' => $experience,
-                'expertise' => $expertise,
-                'works' => $works,
-                'works_style' => $works_style,
-                'contact' => $contact,
-                'language' => $languages,
-                'origin' => $origin
-            ));
-        } else {
-            Auth::logout();
+        if (!empty($_GET['origin'])) {
+            $origin = $_GET['origin'];
         }
+
+        echo $twig->render('admin.twig', array(
+            'introtext' => $introtext,
+            'skill' => $skill,
+            'education' => $education,
+            'experience' => $experience,
+            'expertise' => $expertise,
+            'works' => $works,
+            'works_style' => $works_style,
+            'contact' => $contact,
+            'language' => $languages,
+            'origin' => $origin
+        ));
     }
 
 
@@ -173,6 +169,7 @@ class AdminBoard
             }
 
             if(count($errors) === 0) {
+                unlink('public/img/works/work_' . $id . '.png');
                 move_uploaded_file($picture['tmp_name'], 'public/img/works/work_' . $id . '.png');
                 header('Location: index.php?action=homeadmin&origin=editedwork');
             } else {
@@ -240,6 +237,7 @@ class AdminBoard
             }
 
             if(count($errors) === 0) {
+                unlink('public/pdf/resume_sylvain_depardieu.pdf');
                 move_uploaded_file($resume['tmp_name'], 'public/pdf/resume_sylvain_depardieu.pdf');
                 header('Location: index.php?action=homeadmin&origin=editedresume');
             } else {

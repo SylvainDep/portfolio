@@ -1,5 +1,7 @@
 <nav>
-    <img src="/public/img/logo.png" />
+    <a href="/#body">
+        <img src="/public/img/logo.png" />
+    </a>
     <ul>
         <li>
             <a href="/#body">Home</a>

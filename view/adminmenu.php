@@ -1,5 +1,7 @@
-<nav>
-    <img src="/public/img/logo.png" />
+<nav class="adminmenu">
+    <a href="/index.php?action=homeadmin">
+        <img src="/public/img/logo.png" />
+    </a>
     <ul>
         <li>
             <a href="#">Home</a>

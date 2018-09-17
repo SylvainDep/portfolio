@@ -4,6 +4,10 @@ textarea {
     font-size: 1em;
 }
 
+.adminmenu a {
+    cursor: no-drop;
+}
+
 .save {
     display: block;
     padding: 2px 5px;
@@ -134,8 +138,8 @@ textarea {
 
 .works_trashbin {
     position: absolute;
-    right: 5px;
-    bottom: 5px;
+    right: 0px;
+    bottom: -8px;
     background-color: red;
     color: white;
     width: 30px;
@@ -156,7 +160,10 @@ textarea {
     background-color: #ECC75F;
     color: white;
     padding: 15px 20px;
-    display: inline-block;
+    display: block;
+    width: 150px;
+    text-align: center;
+    margin: 20px auto;
 }
 
 #contact_list {

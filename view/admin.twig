@@ -53,7 +53,7 @@
                     <textarea placeholder="Insert Intro Text Here" rows="8" name="description">{{ introtext.description }}</textarea>
                     <input class="save" type="submit" value="Save">
                 </form>
-                <a id="download_resume">Download my CV (PDF)</a>
+                <a id="download_resume" href="../public/pdf/resume_sylvain_depardieu.pdf">Download my CV (PDF)</a>
                 <form id="edit_resume" enctype="multipart/form-data" method="post" action="index.php?action=editresume">
                     <input type="hidden" name="salut" />
                     <input type="file" name="resume" />
@@ -154,7 +154,7 @@
             {% for works in works %}
             <div class="work_form">
                 <div id="work_sample_{{ works.id }}">
-                    <a href="{{ works.link }}" class="work_link"></a>
+                    <a href="{{ works.link }}" target="_blank" class="work_link"></a>
                 </div>
                 <form class="edit_work" enctype="multipart/form-data" method="post" action="index.php?action=editworks&id={{ works.id }}">
                     <input type="file" name="picture" /><br/>
