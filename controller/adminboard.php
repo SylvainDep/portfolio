@@ -12,43 +12,47 @@ require_once 'vendor/autoload.php';
 
 use Model\ModuleDisplay;
 use Model\Updater;
-use Exception;
 
 class AdminBoard
 {
+
     public function __construct()
     {
-        $loader = new \Twig_Loader_Filesystem($_SERVER['DOCUMENT_ROOT'].'/view');
-        $twig = new \Twig_Environment($loader);
+        if(Auth::isAuth()) {
+            $loader = new \Twig_Loader_Filesystem($_SERVER['DOCUMENT_ROOT'].'/view');
+            $twig = new \Twig_Environment($loader);
 
-        $moduledisplay = new ModuleDisplay;
-        $introtext = $moduledisplay->getIntroText();
-        $skill = $moduledisplay->getSkillData();
-        $experience = $moduledisplay->getExperience();
-        $education = $moduledisplay->getEducation();
-        $expertise = $moduledisplay->getExpertise();
-        $works = $moduledisplay->getWorks();
-        $works_style = $moduledisplay->getWorks();
-        $contact = $moduledisplay->getContact();
-        $languages = $moduledisplay->getLanguages();
-        $origin = '';
+            $moduledisplay = new ModuleDisplay;
+            $introtext = $moduledisplay->getIntroText();
+            $skill = $moduledisplay->getSkillData();
+            $experience = $moduledisplay->getExperience();
+            $education = $moduledisplay->getEducation();
+            $expertise = $moduledisplay->getExpertise();
+            $works = $moduledisplay->getWorks();
+            $works_style = $moduledisplay->getWorks();
+            $contact = $moduledisplay->getContact();
+            $languages = $moduledisplay->getLanguages();
+            $origin = '';
 
-        if (!empty($_GET['origin'])) {
-            $origin = $_GET['origin'];
+            if (!empty($_GET['origin'])) {
+                $origin = $_GET['origin'];
+            }
+
+            echo $twig->render('admin.twig', array(
+                'introtext' => $introtext,
+                'skill' => $skill,
+                'education' => $education,
+                'experience' => $experience,
+                'expertise' => $expertise,
+                'works' => $works,
+                'works_style' => $works_style,
+                'contact' => $contact,
+                'language' => $languages,
+                'origin' => $origin
+            ));
+        } else {
+            Auth::logout();
         }
-
-        echo $twig->render('admin.twig', array(
-            'introtext' => $introtext,
-            'skill' => $skill,
-            'education' => $education,
-            'experience' => $experience,
-            'expertise' => $expertise,
-            'works' => $works,
-            'works_style' => $works_style,
-            'contact' => $contact,
-            'language' => $languages,
-            'origin' => $origin
-        ));
     }
 
 
@@ -152,7 +156,7 @@ class AdminBoard
             $updater->setWorks($id, $link, $category);
 
             $errors     = array();
-            $maxsize    = 2097152;
+            $maxsize    = 2000000;
             $acceptable = array(
                 'image/jpeg',
                 'image/jpg',
@@ -190,7 +194,7 @@ class AdminBoard
             $lastinsert = $updater->insertWorks($link, $category);
 
             $errors     = array();
-            $maxsize    = 2097152;
+            $maxsize    = 2000000;
             $acceptable = array(
                 'image/jpeg',
                 'image/jpg',
@@ -223,13 +227,13 @@ class AdminBoard
     {
         if(Auth::isAuth()) {
             $errors     = array();
-            $maxsize    = 2097152;
+            $maxsize    = 8000000;
             $acceptable = array(
                 'application/pdf'
             );
 
             if(($resume['size'] >= $maxsize) || ($resume["size"] == 0)) {
-                $errors[] = 'File too large. File must be less than 2 megabytes.';
+                $errors[] = 'File too large. File must be less than 8 megabytes.';
             }
 
             if(!in_array($resume['type'], $acceptable) && !empty($resume['type'])) {

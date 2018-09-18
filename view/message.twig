@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Sylvain Depardieu - Web tech allrounder</title>
+    <link href="public/css/style.css" rel="stylesheet" />
+    <link href="public/css/mobile.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <style>
+        {% for works_style in works_style %}
+        #work_sample_{{ works_style.id }} {
+            background: url("../public/img/works/work_{{ works_style.id }}.png") no-repeat center bottom;
+            background-size: cover;
+            width: 30%;
+            height: 200px;
+            border: 3px solid grey;
+        }
+        {% endfor %}
+    </style>
+</head>
+
+<body id="body">
+<section id="header">
+    <header>
+        <div class="content">
+            {% include'menu.php' %}
+        </div>
+    </header>
+
+    <div id="hero_area">
+        <div class="content">
+            <div id="hero_text_area">
+                <div id="hero_text">
+                    <h1>Let's build something great together.</h1>
+                    <p>I am Sylvain Depardieu, <strong>french web all rounder</strong> based in <strong>Hamburg, Germany</strong>. We shall talk about your web projects.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="messageblock">
+    <p id="message">
+        {{ error }}
+    </p>
+
+    <a id="messagelink" href="{{ linkaddress }}">
+        {{ linktext }}
+    </a>
+</div>
+
+<section id="credits">
+    <img src="../public/img/logo_jimdo.png"/>
+    <img src="../public/img/logo_sncf.png"/>
+    <p>Copyright © 2018 sylvaindepardieu.fr - All Rights Reserved.</p>
+    <a id="loginlink" class="popup_button">Admin Login</a>
+</section>
+
+<div id="loginbox" class="popup_box" style="display: none;">
+    <div id="loginwindow" class="popup_window">
+        <form method="post" action="index.php?action=checkpassword">
+            <label for="pseudo">Pseudo</label>
+            <input type="text" name="pseudo" />
+            <br/><br/>
+            <label for="password">Mot de passe</label>
+            <input type="password" name="password" />
+            <p><a href="index.php?action=passwordrecovery">Mot de passe oublié ?</a></p>
+            <br/><br/>
+            <input type="submit" value="Connexion">
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="../public/js/DOM.js"></script>
+<script type="text/javascript" src="../public/js/togglelogin.js"></script>
+<script type="text/javascript" src="../public/js/messagelauncher.js"></script>
+</body>
+</html>

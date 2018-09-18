@@ -41,7 +41,7 @@ header {
     height: 80px;
     width: 100%;
     background-color: white;
-    box-shadow: 0px -40px 100px 10px #656565;
+    box-shadow: 0 -40px 100px 10px #656565;
     z-index: 2000;
 }
 
@@ -338,7 +338,7 @@ nav a {
 
 #contact > * {
     width: 50%;
-    padding: 40px 20px;
+    padding: 0 20px;
 }
 
 #language_list {
@@ -353,7 +353,7 @@ nav a {
 
 .language_sample:last-child {
     padding-right: 0 ;
-    border-right-width: 0px;
+    border-right-width: 0;
 }
 
 #contact_form > * {
@@ -491,4 +491,28 @@ nav a {
     animation-duration: 5s;
     animation-fill-mode: forwards;
     z-index: 2999;
+}
+
+#messageblock {
+    width: 500px;
+    max-width: 80%;
+    display: block;
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px 30px;
+    border: 5px solid rgb(255,0,0);
+    background-color: rgba(255, 0, 0, 0.5);
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2em;
+}
+
+#message {
+    font-style: italic;
+}
+
+#messagelink {
+    font-weight: bold;
+    color: white;
+    display: block;
 }

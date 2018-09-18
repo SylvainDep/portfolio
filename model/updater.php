@@ -109,7 +109,7 @@ class Updater extends Manager
     {
         $db = $this->dbConnect();
         $req = $db->prepare('INSERT INTO works(link, category) VALUES(:link, :category)');
-        $addeddata = $req->execute(array(
+        $req->execute(array(
             'link' => $link,
             'category' => $category
         ));

@@ -31,7 +31,7 @@ class Home
             $origin = $_GET['origin'];
         }
 
-        echo $twig->render('demo.twig', array(
+        echo $twig->render('home.twig', array(
             'introtext' => $introtext,
             'skill' => $skill,
             'education' => $education,
@@ -48,6 +48,8 @@ class Home
 
     static function checkPassword($userId, $userPassword)
     {
+        $loader = new \Twig_Loader_Filesystem($_SERVER['DOCUMENT_ROOT'] . '/view');
+        $twig = new \Twig_Environment($loader);
         $AdminManager = new AdminManager();
 
         $resultat = $AdminManager->getCredentials();
@@ -63,8 +65,11 @@ class Home
                 Auth::auth();
                 header('Location: index.php?action=homeadmin');
             } else {
-                echo 'Mauvais identifiant ou mot de passe ! 
-                <a href="index.php">Revenir à l\'accueil</a>';
+                echo $twig->render('message.twig', array(
+                    'error' => 'Wrong ID or password',
+                    'linkaddress' => '/',
+                    'linktext' =>  'Go back to homepage'
+                ));
             }
         }
     }
@@ -89,8 +94,8 @@ class Home
         mail(
             $resultat['mail'],
             $subject,
-            'From:' . $email . '<br/>
-                       Message:' . $message . '<br/>
+            'From:' . $email . ' \n
+                       Message:' . $message . ' \n
                        Signature:' . $name
         );
 
