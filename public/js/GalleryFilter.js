@@ -90,7 +90,6 @@ var GalleryFilter = (function () {
             Gallery.ButtonSeo.classList.remove('current');
             Gallery.ButtonContent.classList.remove('current');
         });
-
     };
 
     return self;

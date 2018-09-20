@@ -4,7 +4,6 @@ var ToggleAddWork = (function () {
 
     self.init = function () {
         AddWorkProcess.AddWorkLink.addEventListener("click", function (e) {
-
             if (AddWorkProcess.AddWorkBox.style.display === "none") {
                 AddWorkProcess.AddWorkBox.style.display = "flex";
             } else {
@@ -13,12 +12,10 @@ var ToggleAddWork = (function () {
         });
 
         AddWorkProcess.AddWorkBox.addEventListener("click", function (e) {
-
             if (e.target === this) {
                 AddWorkProcess.AddWorkBox.style.display = "none";
             }
         });
-
     };
 
     return self;

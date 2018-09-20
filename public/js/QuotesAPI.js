@@ -3,7 +3,6 @@ var Quotes = (function () {
     var self = {};
 
     self.getFromAPI = function () {
-
         ajaxGet("https://talaikis.com/api/quotes/random/", function (data) {
             var quotes = JSON.parse(data);
 
