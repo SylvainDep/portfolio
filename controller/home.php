@@ -15,7 +15,7 @@ class Home
         $loader = new \Twig_Loader_Filesystem($_SERVER['DOCUMENT_ROOT'] . '/view');
         $twig = new \Twig_Environment($loader);
 
-        $moduledisplay = new ModuleDisplay;
+        $moduledisplay = new ModuleDisplay();
         $introtext = $moduledisplay->getIntroText();
         $skill = $moduledisplay->getSkillData();
         $experience = $moduledisplay->getExperience();
@@ -80,7 +80,7 @@ class Home
 
         $resultat = $AdminManager->getCredentials();
 
-        mail($resultat['mail'], 'Récupération de mot de passe' , 'Le mot de passe pour accéder au site est Solange78');
+        mail($resultat['mail'], 'Récupération de mot de passe' , 'Le mot de passe pour accéder au site est Beynes78');
 
         header('Location: index.php');
     }

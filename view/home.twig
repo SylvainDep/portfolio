@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <title>Sylvain Depardieu - Web tech allrounder</title>
@@ -103,7 +103,6 @@
             </div>
         </div>
     </div>
-    </div>
 </section>
 
 <section id="expertise">
@@ -188,7 +187,7 @@
                 <input name="name" type="text" placeholder="Name"/>
                 <input name="email" type="email" placeholder="Your email"/>
             </div>
-            <input name="subject" type="subject" placeholder="Subject"/>
+            <input name="subject" type="text" placeholder="Subject"/>
             <textarea name="message" placeholder="Your Message"></textarea>
             <input type="submit" value="SEND"/>
         </form>
@@ -198,8 +197,8 @@
 <div id="map"></div>
 
 <section id="credits">
-    <img src="../public/img/logo_jimdo.png"/>
-    <img src="../public/img/logo_sncf.png"/>
+    <img src="../public/img/logo_jimdo.png" alt="Logo Jimdo"/>
+    <img src="../public/img/logo_sncf.png" alt="Logo SNCF"/>
     <p>Copyright © 2018 sylvaindepardieu.fr - All Rights Reserved.</p>
     <a id="loginlink" class="popup_button">Admin Login</a>
 </section>
@@ -208,10 +207,10 @@
     <div id="loginwindow" class="popup_window">
         <form method="post" action="index.php?action=checkpassword">
             <label for="pseudo">Pseudo</label>
-            <input type="text" name="pseudo" />
+            <input id="pseudo" type="text" name="pseudo" />
             <br/><br/>
             <label for="password">Mot de passe</label>
-            <input type="password" name="password" />
+            <input id="password" type="password" name="password" />
             <p><a href="index.php?action=passwordrecovery">Mot de passe oublié ?</a></p>
             <br/><br/>
             <input type="submit" value="Connexion">

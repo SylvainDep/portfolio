@@ -1,6 +1,6 @@
 <nav>
     <a href="/#body">
-        <img src="/public/img/logo.png" />
+        <img src="/public/img/logo.png" alt="logo" />
     </a>
     <ul>
         <li>

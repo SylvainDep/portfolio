@@ -1,6 +1,6 @@
 <nav class="adminmenu">
     <a href="/index.php?action=homeadmin">
-        <img src="/public/img/logo.png" />
+        <img src="/public/img/logo.png" alt="logo" />
     </a>
     <ul>
         <li>
